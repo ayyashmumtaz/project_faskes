@@ -28,4 +28,6 @@
   <link rel="stylesheet" href="<?= base_url('assets/plugins/summernote/summernote-bs4.min.css') ?>">
   <!-- link Icon Fontawesome -->
   <script src="https://kit.fontawesome.com/a388e38538.js" crossorigin="anonymous"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>

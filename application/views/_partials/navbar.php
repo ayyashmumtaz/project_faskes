@@ -18,11 +18,16 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+
     </ul>
 
     <!-- Right navbar links -->
+<ul class="navbar-nav ml-auto" style="margin-right: 1px;">
+  <li  >
+         <a class=" btn btn-sm btn-primary" href="<?= base_url('Login/logout');?>">Sign Out</a>
 
-
+  </li>
+</ul>
       <!-- Messages Dropdown Menu -->
      
       <!-- Notifications Dropdown Menu -->
