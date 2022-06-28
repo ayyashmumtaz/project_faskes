@@ -48,15 +48,15 @@
                             <?php foreach ($dataKecamatan as $k) : ?>
                                <tr>
                                   <td><?= $nomor++ ?></td>
-                                  <td><?= $k->nama ?></td>
+                                  <td><?= $k->nama_kecamatan ?></td>
                                   <td>
-                                     <a href="<?= base_url('Master/detail?nama=') . $k->nama ?>" class="pr-2 text-info">
+                                     <a href="<?= base_url('Master/detail?id=') . $k->id_kecamatan ?>" class="pr-2 text-info">
                                         <i class="fa-solid fa-eye pr-1 text-info"></i>View
                                      </a>
-                                     <a href="<?= base_url('Master/edit?nama=') . $k->nama ?>" class="pr-2 text-success">
+                                     <a href="<?= base_url('Master/edit?id=') . $k->id_kecamatan ?>" class="pr-2 text-success">
                                         <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                      </a>
-                                     <a href="<?= base_url('Master/delete?nama=') . $k->nama ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Kecamatan, <?= $k->nama ?> ini ?')) {return false}">
+                                     <a href="<?= base_url('Master/delete?id=') . $k->id_kecamatan ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Kecamatan, <?= $k->id_kecamatan ?> ini ?')) {return false}">
                                         <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                      </a>
                                   </td>
