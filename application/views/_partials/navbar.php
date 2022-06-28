@@ -91,31 +91,26 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?= site_url('Master/faskes');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Faskes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/kecamatan');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Kecamatan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/jenis_faskes');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Jenis Faskes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/user');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Data User</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="<?= site_url('Master/komentar');?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
                   <p>Data Komentar</p>
                 </a>
               </li>
