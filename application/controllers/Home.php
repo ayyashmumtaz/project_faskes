@@ -6,10 +6,10 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		// $status = $this->session->userdata('role');
-  //   	if(!isset($status)){
-  //     redirect(base_url("Login"));
-  //   }
+		$status = $this->session->userdata('role');
+    	if(!isset($status)){
+      redirect(base_url("Login"));
+    }
 	}
 
 	public function index()
