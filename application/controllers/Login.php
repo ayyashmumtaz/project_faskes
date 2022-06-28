@@ -11,7 +11,9 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('_partials/header');
+		$data['title'] = 'Login Faskes';
+		
+		$this->load->view('_partials/header', $data);
 		$this->load->view('login');
 	}
 
