@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Login_model');
+	}
+
 	public function index()
 	{
 		$this->load->view('_partials/header');
@@ -14,14 +20,13 @@ class Login extends CI_Controller {
 		$password = $this->input->post('password');
 		$data = array(
 			'username' => $username,
-			'password' => md5(str)$password
+			'password' => md5($password)
 			);
 	$hasil = $this->Login_model->cek_login($data);
 	if ($hasil->num_rows() == 1) {
 
 		foreach ($hasil->result() as $sess) {
 		$sess_data['logged_in'] = 'Sudah Login';
-		$sess_data['nama'] = $sess->nama;
 		$sess_data['username'] = $sess->username;
 		$sess_data['role'] = $sess->role;
 		$this->session->set_userdata($sess_data);
@@ -34,12 +39,7 @@ class Login extends CI_Controller {
 		}elseif ($status == 2) {
 			$this->session->set_flashdata('login_berhasil', ' ');
 			redirect(base_url("Spk/a3"));
-		}elseif ($status == 3) {
-			$this->session->set_flashdata('login_berhasil', ' ');
-			redirect(base_url("Gudang"));
-		}elseif ($status == 4) {
-			$this->session->set_flashdata('login_berhasil', ' ');
-			redirect(base_url("Spk/a3"));
+		
 		}
 	}
 }
