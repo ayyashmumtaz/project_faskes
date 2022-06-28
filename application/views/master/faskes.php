@@ -50,7 +50,7 @@
                          </tr>
                          <tr>
                             <td>Kecamatan</td>
-                            <td><?= $df->kecamatan_id ?></td>
+                            <td><?= $df->nama_kecamatan ?></td>
                          </tr>
                          <tr>
                             <td>Latitude and Longitide</td>
@@ -90,7 +90,7 @@
                          </tr>
                          <tr>
                             <td>Jenis Faskes</td>
-                            <td><?= $df->jenis ?></td>
+                            <td><?= $df->nama_faskes ?></td>
                          </tr>
                          <tr>
                             <td>Action</td>
