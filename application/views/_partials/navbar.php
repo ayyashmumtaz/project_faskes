@@ -70,7 +70,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?= site_url('Home');?>" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -92,11 +92,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?= site_url('Master/faskes');?>" class="nav-link">
-                  <p>Data Faskes</p>
+                <i class="far fa-circle nav-icon nav-icon"></i>  
+                <p>Data Faskes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/kecamatan');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i>
                   <p>Data Kecamatan</p>
                 </a>
               </li>
