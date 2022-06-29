@@ -121,6 +121,7 @@
               </li>
                <li class="nav-item">
                 <a href="<?= site_url('Master/komentar');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i> 
                   <p>Data Komentar</p>
                 </a>
               </li>

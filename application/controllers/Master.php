@@ -65,6 +65,19 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	public function komentar()
+	{
+		$data['title'] = 'Data Komentar';
+
+		$this->load->model('Komentar_model');
+		$data['dataKomentar'] = $this->Komentar_model->getAllDataKomentar();
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/komentar', $data);
+		$this->load->view('_partials/footer');
+	}
+
 }
 
 /* End of file Master.php */
