@@ -40,7 +40,8 @@
                       </div>
                       <div class="form-group">
                          <label for="kecamatan_id" class="form-label">Kecamatan</label>
-                         <select id="kecamatan_id" name="kecamatan_id"  class="form-control" required>
+                         <select id="validatedInputGroupSelect" name="kecamatan_id"  class="form-control" required>
+                           <option value="">Silahkan Pilih Kecamatan</option>
                        <?php foreach($kecamatan as $i){ ?>
                   <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
                   <?php } ?>
@@ -102,9 +103,13 @@
                       </div>
                       <div class="form-group">
                          <label for="jenis_id" class="form-label">Jenis Faskes</label>
-                         <input id="jenis_id" name="jenis_id" placeholder="Tulis Jenis Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <select id="validatedInputGroupSelect" name="jenis_faskes_id" class="form-control" required>
+                            <option value="">Silahkan Pilih Jenis Faskes Anda</option>
+                            <?php foreach ($jenis_faskes as $jf) { ?>
+                               <option value="<?= $jf['id_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
+                            <?php } ?>
                       </div>
-                      <div class="form-group row">
+                      <div class="form-group row mt-5">
                          <div class="col-12">
                             <button class="btn btn-primary" type="submit">Tambah</button>
                          </div>

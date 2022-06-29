@@ -35,6 +35,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Form Faskes';
 		$data['kecamatan'] = $this->Faskes_model->getKecamatan();
+		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/faskes_create');
