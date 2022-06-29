@@ -26,6 +26,17 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// CREATE 
+	public function faskes_create()
+	{
+		$data['title'] = 'Form Faskes';
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/faskes_create');
+		$this->load->view('_partials/footer');
+	}
+
 	public function kecamatan()
 	{
 		$data['title'] = 'Data Kecamatan';
@@ -36,6 +47,16 @@ class Master extends CI_Controller
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/kecamatan', $data);
+		$this->load->view('_partials/footer');
+	}
+
+	public function kecamatan_create()
+	{
+		$data['title'] = 'Form Kecamatan';
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/kecamatan_create');
 		$this->load->view('_partials/footer');
 	}
 

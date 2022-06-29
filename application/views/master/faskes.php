@@ -30,7 +30,7 @@
              <div class="row">
                 <div class="form-group row ml-2">
                    <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="#" class="text-white">Tambah Faskes</a>
+                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/faskes_create') ?>" class="text-white">Tambah Faskes</a>
                    </button>
                 </div>
                 <div class="col-12 table-responsive">
