@@ -1,0 +1,77 @@
+.navv {
+  margin-left: 50px;
+}
+
+.hero {
+  background-color: #E1F8FF;
+  height: 80vh;
+  background-image: url("../img/building-hero2.png");
+  background-size: 50%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+}
+
+.text-hero {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.non-bold {
+  font-weight: 400;
+}
+
+.btn-outline-primary {
+  border: 1px solid #41B2F2;
+  color: #151515;
+}
+.btn-outline-primary:hover {
+  border: 1px solid #41B2F2;
+  background-color: #41B2F2;
+}
+
+.btn-primary {
+  background-color: #41B2F2;
+  border: 1px solid #41B2F2;
+}
+.btn-primary:hover {
+  background-color: #2c87bd;
+  border: 1px solid #41B2F2;
+}
+
+.btn-primary:focus, .btn-outline-primary:focus {
+  background-color: #41B2F2;
+  border: 1px solid #E1F8FF;
+}
+
+/* SCREEN BREAKPOINT */
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .hero {
+    background-size: contain;
+  }
+
+  .text-hero {
+    text-align: center;
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575.97px) {
+  .hero {
+    background-size: 80%;
+    background-position: bottom center;
+  }
+}
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
