@@ -3,7 +3,7 @@
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
         <div class="container px-5">
-          <a class="navbar-brand fw-bold" href="#page-top">SIFASKES DEPOK</a>
+          <a class="navbar-brand fw-bold" href="<?= base_url() ?>homepage">SIFASKES DEPOK</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list"></i>
           </button>
