@@ -40,7 +40,9 @@
                       </div>
                       <div class="form-group">
                          <label for="kecamatan_id" class="form-label">Kecamatan</label>
-                         <input id="kecamatan_id" name="kecamatan_id" placeholder="Tulis Kecamatan Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <select id="kecamatan_id" name="kecamatan_id"  class="form-control" required>
+                       
+                         </select>
                       </div>
                       <div class="form-group">
                          <label for="latlong" class="form-label">Latitude dan Longetitude</label>
@@ -111,4 +113,23 @@
     </section>
     <!-- /.content -->
  </div>
+
+<script type="text/javascript">               
+   $(document).ready(function () {
+             $("#kecamatan_id").click(function () {
+                 $.ajax({
+                     url: 'https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=3276',
+                     type: 'GET',
+                     data: "{}",
+                     success: function (data) {  
+               var s = '<option value="-1">--- PILIH KECAMATAN ----</option>';  
+               for (var i = 0; i < 11; i++) {  
+                   s += '<option value="' + data.kecamatan[i].id + '">' + data.kecamatan[i].nama + '</option>';  
+               }  
+               $("#kecamatan_id").html(s);  
+           }  
+                 });
+             });
+         });
+    </script>
  <!-- /.content-wrapper -->
