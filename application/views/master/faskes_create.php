@@ -93,7 +93,11 @@
                          <input id="website" name="website" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
-                         <label for="jumlah_pegawai" class="form-label">Jenis Pegawai</label>
+                         <label for="jumlah_dokter" class="form-label">Jumlah Dokter</label>
+                         <input id="jumlah_dokter" name="jumlah_dokter" placeholder="Tulis Jumlah Dokter Fasilitas Kesehatan" type="text" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                         <label for="jumlah_pegawai" class="form-label">Jumlah Pegawai</label>
                          <input id="jumlah_pegawai" name="jumlah_pegawai" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
