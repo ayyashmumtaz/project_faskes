@@ -109,16 +109,19 @@
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/jenis_faskes');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i>
                   <p>Data Jenis Faskes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= site_url('Master/user');?>" class="nav-link">
+                <a href="<?= site_url('Master/users');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i>  
                   <p>Data User</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="<?= site_url('Master/komentar');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i> 
                   <p>Data Komentar</p>
                 </a>
               </li>
