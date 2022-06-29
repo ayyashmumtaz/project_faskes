@@ -114,7 +114,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= site_url('Master/user');?>" class="nav-link">
+                <a href="<?= site_url('Master/users');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i>  
                   <p>Data User</p>
                 </a>
               </li>
