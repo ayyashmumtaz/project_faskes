@@ -109,6 +109,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?= site_url('Master/jenis_faskes');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i>
                   <p>Data Jenis Faskes</p>
                 </a>
               </li>
