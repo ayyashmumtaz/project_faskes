@@ -56,7 +56,7 @@
                                      <a href="<?= base_url('Master/edit?id=') . $k->id_kecamatan ?>" class="pr-2 text-success">
                                         <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                      </a>
-                                     <a href="<?= base_url('Master/delete?id=') . $k->id_kecamatan ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Kecamatan, <?= $k->id_kecamatan ?> ini ?')) {return false}">
+                                     <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
                                         <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                      </a>
                                   </td>
@@ -74,3 +74,25 @@
     <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
+ <script>
+   function deletedata(){
+    Swal.fire({
+       title: 'Hapus Data?',
+       text: "Anda akan menghapus data Kecamatan <?= $k->nama_kecamatan;?>",
+       icon: 'warning',
+       showCancelButton: true,
+       confirmButtonColor: '#3085d6',
+       cancelButtonColor: '#d33',
+       confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+       if (result.isConfirmed) {
+         window.location = "<?= base_url('Master/kecamatan_delete?id=') . $k->id_kecamatan ?>";
+          Swal.fire(
+             'Deleted!',
+             'Kecamatan <?= $k->nama_kecamatan;?> Berhasil di Hapus',
+             'success'
+          )
+       }
+    })
+   }
+ </script>

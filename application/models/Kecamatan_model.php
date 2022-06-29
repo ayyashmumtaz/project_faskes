@@ -13,4 +13,11 @@ class Kecamatan_model extends CI_Model
 
       return $query->result();
    }
+
+   public function deleteKecamatan($id)
+   {
+      $this->db->where('id_kecamatan', $id);
+      $this->db->delete('kecamatan');
+   }
+
 }

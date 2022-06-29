@@ -10,7 +10,6 @@ class Master extends CI_Controller
 
 	public function index()
 	{
-		
 	}
 
 	public function faskes()
@@ -60,6 +59,14 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	public function kecamatan_delete()
+	{
+		$this->load->model('Kecamatan_model');
+		$id = $this->input->get('id');
+		$this->Kecamatan_model->deleteKecamatan($id);
+		redirect(base_url() . 'master/kecamatan', 'refresh');
+	}
+
 	public function jenis_faskes()
 	{
 		$data['title'] = 'Data Jenis Faskes';
@@ -98,7 +105,6 @@ class Master extends CI_Controller
 		$this->load->view('master/komentar', $data);
 		$this->load->view('_partials/footer');
 	}
-
 }
 
 /* End of file Master.php */
