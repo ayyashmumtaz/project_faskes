@@ -15,4 +15,9 @@ class Faskes_model extends CI_Model
 
       return $query->result();
    }
+
+   function getKecamatan()
+   {
+   return $this->db->get('kecamatan')->result_array();
+   }
 }

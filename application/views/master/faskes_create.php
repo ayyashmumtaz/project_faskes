@@ -41,7 +41,9 @@
                       <div class="form-group">
                          <label for="kecamatan_id" class="form-label">Kecamatan</label>
                          <select id="kecamatan_id" name="kecamatan_id"  class="form-control" required>
-                       
+                       <?php foreach($kecamatan as $i){ ?>
+                  <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
+                  <?php } ?>
                          </select>
                       </div>
                       <div class="form-group">
@@ -91,11 +93,7 @@
                          <input id="website" name="website" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
-                         <label for="jumlah_dokter" class="form-label">Jumlah Dokter</label>
-                         <input id="jumlah_dokter" name="jumlah_dokter" placeholder="Tulis Jumlah Dokter Fasilitas Kesehatan" type="text" class="form-control" required>
-                      </div>
-                      <div class="form-group">
-                         <label for="jumlah_pegawai" class="form-label">Jumlah Pegawai</label>
+                         <label for="jumlah_pegawai" class="form-label">Jenis Pegawai</label>
                          <input id="jumlah_pegawai" name="jumlah_pegawai" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
@@ -118,22 +116,4 @@
     <!-- /.content -->
  </div>
 
-<script type="text/javascript">               
-   $(document).ready(function () {
-             $("#kecamatan_id").click(function () {
-                 $.ajax({
-                     url: 'https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=3276',
-                     type: 'GET',
-                     data: "{}",
-                     success: function (data) {  
-               var s = '<option value="-1">--- PILIH KECAMATAN ----</option>';  
-               for (var i = 0; i < 11; i++) {  
-                   s += '<option value="' + data.kecamatan[i].id + '">' + data.kecamatan[i].nama + '</option>';  
-               }  
-               $("#kecamatan_id").html(s);  
-           }  
-                 });
-             });
-         });
-    </script>
  <!-- /.content-wrapper -->
