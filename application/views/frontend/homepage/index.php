@@ -14,12 +14,12 @@
               <li class="nav-item"><a class="nav-link me-lg-3" href="#About">About</a></li>
             </ul>
             <div>
-              <a href="<?= base_url() ?>login" class="btn btn-outline-primary rounded-pill px-3 mb-2 mb-lg-0">
+              <a href="<?= base_url() ?>login" class="btn btn-outline-primary rounded px-3 mb-2 mb-lg-0">
                 <span class="d-flex align-items-center">
                   <span class="small">Masuk</span>
                 </span>
               </a>
-              <a href="<?= base_url() ?>login/register" class="btn btn-primary rounded-pill px-3 mb-2 ms-2 mb-lg-0">
+              <a href="<?= base_url() ?>login/register" class="btn btn-primary rounded px-3 mb-2 ms-2 mb-lg-0">
                 <span class="d-flex align-items-center">
                   <span class="small">Daftar</span>
                 </span>
