@@ -108,8 +108,9 @@
                             <?php foreach ($jenis_faskes as $jf) { ?>
                                <option value="<?= $jf['id_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
                             <?php } ?>
+                         </select>
                       </div>
-                      <div class="form-group row mt-5">
+                      <div class="form-group row">
                          <div class="col-12">
                             <button class="btn btn-primary" type="submit">Tambah</button>
                          </div>

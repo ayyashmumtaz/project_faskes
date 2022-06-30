@@ -54,20 +54,20 @@
                             <td class="align-middle"><?= $df->nama_kecamatan ?></td>
                             <td class="align-middle"><?= $df->skor_rating ?></td>
                             <td class="align-middle"><?= $df->website ?></td>
-                            <td class="align-middle">
+                            <td class="align-middle d-flex">
                                <a href="<?= base_url('Master/faskes_detail?id=') . $df->id ?>" class="pr-2 text-info">
                                   <i class="fa-solid fa-eye pr-1 text-info"></i>View
                                </a>
                                <a href="<?= base_url('Master/edit?nama=') . $df->id ?>" class="pr-2 text-success">
                                   <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                </a>
-                               <a type="button" class="pr-2 text-danger" onclick = "return deletedata()">
+                               <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
                                   <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                </a>
                             </td>
                       </tbody>
+                   <?php endforeach ?>
                    </table>
-                <?php endforeach ?>
                 </div>
              </div>
              <!-- /.card-body -->
@@ -80,24 +80,24 @@
  <!-- /.content-wrapper -->
 
  <script>
-   function deletedata(){
-    Swal.fire({
-       title: 'Hapus Data?',
-       text: "Anda akan menghapus data Faskes <?= $df->nama;?>",
-       icon: 'warning',
-       showCancelButton: true,
-       confirmButtonColor: '#3085d6',
-       cancelButtonColor: '#d33',
-       confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-       if (result.isConfirmed) {
-         window.location = "<?= base_url('Master/faskes_delete?id=') . $df->id ?>";
-          Swal.fire(
-             'Deleted!',
-             'Faskes <?= $df->nama;?> Berhasil di Hapus',
-             'success'
-          )
-       }
-    })
-   }
+    function deletedata() {
+       Swal.fire({
+          title: 'Hapus Data?',
+          text: "Anda akan menghapus data Faskes <?= $df->nama; ?>",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+          if (result.isConfirmed) {
+             window.location = "<?= base_url('Master/faskes_delete?id=') . $df->id ?>";
+             Swal.fire(
+                'Deleted!',
+                'Faskes <?= $df->nama; ?> Berhasil di Hapus',
+                'success'
+             )
+          }
+       })
+    }
  </script>

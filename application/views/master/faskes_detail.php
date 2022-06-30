@@ -107,7 +107,7 @@
                             <a href="<?= base_url('Master/edit?nama=') . $faskes->id ?>" class="pr-2 text-success">
                                <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                             </a>
-                            <a href="<?= base_url('Master/delete?nama=') . $faskes->id ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Faskes Bernama, <?= $faskes->nama ?> ?')) {return false}">
+                            <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
                                <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                             </a>
                          </td>
@@ -123,3 +123,25 @@
     <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
+ <script>
+    function deletedata() {
+       Swal.fire({
+          title: 'Hapus Data?',
+          text: "Anda akan menghapus data Faskes <?= $faskes->nama; ?>",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+          if (result.isConfirmed) {
+             window.location = "<?= base_url('Master/faskes_delete?id=') . $faskes->id ?>";
+             Swal.fire(
+                'Deleted!',
+                'Faskes <?= $faskes->nama; ?> Berhasil di Hapus',
+                'success'
+             )
+          }
+       })
+    }
+ </script>
