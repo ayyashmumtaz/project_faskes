@@ -40,11 +40,11 @@
                       </div>
                       <div class="form-group">
                          <label for="kecamatan_id" class="form-label">Kecamatan</label>
-                         <select id="validatedInputGroupSelect" name="kecamatan_id"  class="form-control" required>
-                           <option value="">Silahkan Pilih Kecamatan</option>
-                       <?php foreach($kecamatan as $i){ ?>
-                  <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
-                  <?php } ?>
+                         <select id="validatedInputGroupSelect" name="kecamatan_id" class="form-control" required>
+                            <option value="">Silahkan Pilih Kecamatan</option>
+                            <?php foreach ($kecamatan as $i) { ?>
+                               <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
+                            <?php } ?>
                          </select>
                       </div>
                       <div class="form-group">
@@ -91,7 +91,7 @@
                       </div>
                       <div class="form-group mt-3">
                          <label for="website" class="form-label">Website</label>
-                         <input id="website" name="website" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <input id="website" name="website" placeholder="Tulis Website Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
                          <label for="jumlah_dokter" class="form-label">Jumlah Dokter</label>
