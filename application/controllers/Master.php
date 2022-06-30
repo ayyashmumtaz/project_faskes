@@ -21,7 +21,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Faskes';
 
-
+		
 		$data['dataFaskes'] = $this->Faskes_model->getAllDataFaskes();
 
 		$this->load->view('_partials/header', $data);
@@ -42,25 +42,11 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
-	// READ
-	public function faskes_detail()
-	{
-		$data['title'] = 'Faskes Detail';
-
-		$id = $this->input->get('id');
-		$data['faskes'] = $this->Faskes_model->findFaskesById($id);
-
-		$this->load->view('_partials/header', $data);
-		$this->load->view('_partials/navbar');
-		$this->load->view('master/faskes_detail', $data);
-		$this->load->view('_partials/footer');
-	}
-		
 	public function kecamatan()
 	{
 		$data['title'] = 'Data Kecamatan';
 
-
+		
 		$data['dataKecamatan'] = $this->Kecamatan_model->getAllDataKecamatan();
 
 		$this->load->view('_partials/header', $data);
@@ -81,7 +67,7 @@ class Master extends CI_Controller
 
 	public function kecamatan_delete()
 	{
-
+		
 		$id = $this->input->get('id');
 		$this->Kecamatan_model->deleteKecamatan($id);
 		redirect(base_url() . 'master/kecamatan', 'refresh');
@@ -91,7 +77,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Jenis Faskes';
 
-
+		
 		$data['dataJenisFaskes'] = $this->Jenis_faskes_model->getAllDataJenisFaskes();
 
 		$this->load->view('_partials/header', $data);
@@ -104,7 +90,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Users';
 
-
+		
 		$data['dataUsers'] = $this->Users_model->getAllDataUsers();
 
 		$this->load->view('_partials/header', $data);
@@ -117,7 +103,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Komentar';
 
-
+		
 		$data['dataKomentar'] = $this->Komentar_model->getAllDataKomentar();
 
 		$this->load->view('_partials/header', $data);
