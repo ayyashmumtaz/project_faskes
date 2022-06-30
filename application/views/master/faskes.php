@@ -9,8 +9,7 @@
              </div>
              <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                   <li class="breadcrumb-item active">Blank Page</li>
+                   <li class="breadcrumb-item active">Home</li>
                 </ol>
              </div>
           </div>
@@ -30,83 +29,44 @@
              <div class="row">
                 <div class="form-group row ml-2">
                    <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="#" class="text-white">Tambah Faskes</a>
+                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/faskes_create') ?>" class="text-white">Tambah Faskes</a>
                    </button>
                 </div>
                 <div class="col-12 table-responsive">
                    <table class="table table-hover table-bordered">
-                      <?php $nomor = 1; ?>
-                      <?php foreach ($dataFaskes as $df) : ?>
+                      <thead class="thead-dark align-center">
                          <tr>
-                            <td>No</td>
-                            <td><?= $nomor++ ?></td>
-                         <tr>
-                            <td>Nama</td>
-                            <td><?= $df->nama ?></td>
+                            <th class="align-middle">No</th>
+                            <th class="align-middle">Nama Faskes</th>
+                            <th class="align-middle">Jenis Faskes</th>
+                            <th class="align-middle">Kecamtan</th>
+                            <th class="align-middle">Rating</th>
+                            <th class="align-middle">Website</th>
+                            <th class="align-middle">Action</th>
                          </tr>
-                         <tr>
-                            <td>Alamat</td>
-                            <td><?= $df->alamat ?></td>
-                         </tr>
-                         <tr>
-                            <td>Kecamatan</td>
-                            <td><?= $df->nama_kecamatan ?></td>
-                         </tr>
-                         <tr>
-                            <td>Latitude and Longitide</td>
-                            <td><?= $df->latlong ?></td>
-                         </tr>
-                         <tr>
-                            <td>Deskripsi</td>
-                            <td><?= $df->deskripsi ?></td>
-                         </tr>
-                         <tr>
-                            <td>Rating</td>
-                            <td><?= $df->skor_rating ?></td>
-                         </tr>
-                         <tr>
-                            <td>Foto 1</td>
-                            <td><?= $df->foto1 ?></td>
-                         </tr>
-                         <tr>
-                            <td>Foto 2</td>
-                            <td><?= $df->foto2 ?></td>
-                         </tr>
-                         <tr>
-                            <td>Foto 3</td>
-                            <td><?= $df->foto3 ?></td>
-                         </tr>
-                         <tr>
-                            <td>Website</td>
-                            <td><?= $df->website ?></td>
-                         </tr>
-                         <tr>
-                            <td>Jumlah Dokter</td>
-                            <td><?= $df->jumlah_dokter ?></td>
-                         </tr>
-                         <tr>
-                            <td>Jumlah Pegawai</td>
-                            <td><?= $df->jumlah_pegawai ?></td>
-                         </tr>
-                         <tr>
-                            <td>Jenis Faskes</td>
-                            <td><?= $df->nama_faskes ?></td>
-                         </tr>
-                         <tr>
-                            <td>Action</td>
-                            <td>
-                               <a href="<?= base_url('Master/detail?nama=') . $df->id ?>" class="pr-2 text-info">
+                      </thead>
+                      <tbody>
+                         <?php $nomor = 1; ?>
+                         <?php foreach ($dataFaskes as $df) : ?>
+                            <td class="align-middle"><?= $nomor++ ?></td>
+                            <td class="align-middle"><?= $df->nama ?></td>
+                            <td class="align-middle"><?= $df->nama_faskes ?></td>
+                            <td class="align-middle"><?= $df->nama_kecamatan ?></td>
+                            <td class="align-middle"><?= $df->skor_rating ?></td>
+                            <td class="align-middle"><?= $df->website ?></td>
+                            <td class="align-middle d-flex">
+                               <a href="<?= base_url('Master/faskes_detail?id=') . $df->id ?>" class="pr-2 text-info">
                                   <i class="fa-solid fa-eye pr-1 text-info"></i>View
                                </a>
                                <a href="<?= base_url('Master/edit?nama=') . $df->id ?>" class="pr-2 text-success">
                                   <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                </a>
-                               <a href="<?= base_url('Master/delete?nama=') .$df->id ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Faskes Bernama, <?= $df->nama ?> ?')) {return false}">
+                               <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
                                   <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                </a>
                             </td>
-                         </tr>
-                      <?php endforeach ?>
+                      </tbody>
+                   <?php endforeach ?>
                    </table>
                 </div>
              </div>
@@ -118,3 +78,26 @@
     <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
+
+ <script>
+    function deletedata() {
+       Swal.fire({
+          title: 'Hapus Data?',
+          text: "Anda akan menghapus data Faskes <?= $df->nama; ?>",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+          if (result.isConfirmed) {
+             window.location = "<?= base_url('Master/faskes_delete?id=') . $df->id ?>";
+             Swal.fire(
+                'Deleted!',
+                'Faskes <?= $df->nama; ?> Berhasil di Hapus',
+                'success'
+             )
+          }
+       })
+    }
+ </script>
