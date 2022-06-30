@@ -26,4 +26,14 @@ class Faskes_model extends CI_Model
    {
       return $this->db->get('jenis_faskes')->result_array();
    }
+
+   public function findFaskesById($id)
+   {
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.id', 'LEFT');
+      $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'left');
+
+      $query = $this->db->get_where('faskes', array('id' => $id));
+      return $query->row();
+   }
+
 }

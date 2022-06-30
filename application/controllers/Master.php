@@ -42,6 +42,20 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// READ
+	public function faskes_detail()
+	{
+		$data['title'] = 'Faskes Detail';
+
+		$id = $this->input->get('id');
+		$data['faskes'] = $this->Faskes_model->findFaskesById($id);
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/faskes_detail', $data);
+		$this->load->view('_partials/footer');
+	}
+
 	public function kecamatan()
 	{
 		$data['title'] = 'Data Kecamatan';
