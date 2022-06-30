@@ -56,6 +56,14 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// DELETE
+	public function faskes_delete()
+	{
+		$id = $this->input->get('id');
+		$this->Faskes_model->deleteFaskes($id);
+		redirect(base_url() . 'master/faskes', 'refresh');
+	}
+
 	public function kecamatan()
 	{
 		$data['title'] = 'Data Kecamatan';

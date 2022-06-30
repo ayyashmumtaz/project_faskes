@@ -36,4 +36,11 @@ class Faskes_model extends CI_Model
       return $query->row();
    }
 
+   // DELETE
+   public function deleteFaskes($id)
+   {
+      $this->db->where('id', $id);
+      $this->db->delete('faskes');
+   }
+
 }
