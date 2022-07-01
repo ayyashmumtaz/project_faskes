@@ -9,7 +9,7 @@ class Faskes_model extends CI_Model
    {
       $this->db->select('*');
       $this->db->from('faskes');
-      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.id', 'LEFT');
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
       $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'left');
       $query = $this->db->get();
 
@@ -29,7 +29,7 @@ class Faskes_model extends CI_Model
 
    public function findFaskesById($id)
    {
-      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.id', 'LEFT');
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
       $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'left');
 
       $query = $this->db->get_where('faskes', array('id' => $id));
