@@ -36,6 +36,19 @@ class Faskes_model extends CI_Model
       return $query->row();
    }
 
+   // CREATE SAVE
+   public function input_data($data, $table)
+   {
+      $this->db->insert($table, $data);
+   }
+
+   // UPDATE
+   public function update_data($where, $data, $table)
+   {
+      $this->db->where($where);
+      $this->db->update($table, $data);
+   }
+
    // DELETE
    public function deleteFaskes($id)
    {

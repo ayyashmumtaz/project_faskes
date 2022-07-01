@@ -59,7 +59,7 @@
                          <label for="skor_rating" class="form-label">Skor Rating</label>
                          <input id="skor_rating" name="skor_rating" placeholder="Tulis Skor Rating Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
-                      <label for="foto" class="form-label">Foto 1</label>
+                      <!-- <label for="foto" class="form-label">Foto 1</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
                             <input name="foto1" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
@@ -88,7 +88,7 @@
                          <div class="input-group-append">
                             <button class="btn btn-success" type="button">Button</button>
                          </div>
-                      </div>
+                      </div> -->
                       <div class="form-group mt-3">
                          <label for="website" class="form-label">Website</label>
                          <input id="website" name="website" placeholder="Tulis Website Fasilitas Kesehatan" type="text" class="form-control" required>
