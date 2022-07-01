@@ -21,10 +21,10 @@ class Jenis_faskes_model extends CI_Model
    }
 
    // DELETE
-   public function deleteJenisFaskes($id)
+   public function deleteJenisFaskes($id, $table)
    {
-      $this->db->where('id_faskes', $id);
-      $this->db->delete('jenis_faskes');
+      $this->db->where($id);
+      $this->db->delete($table);
    }
 
 }

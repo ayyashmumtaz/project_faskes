@@ -79,7 +79,7 @@
           confirmButtonText: 'Yes, delete it!'
        }).then((result) => {
           if (result.isConfirmed) {
-             window.location = "<?= base_url('Master/jenis_faskes_delete?id=') . $jf->id_faskes ?>";
+             window.location = "<?= base_url('Master/jenis_faskes_delete/') . $jf->id_faskes ?>";
              Swal.fire(
                 'Deleted!',
                 'Faskes <?= $jf->nama_faskes; ?> Berhasil di Hapus',
