@@ -4,8 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Master extends CI_Controller
 {
 	public function __construct()
+
 	{
 		parent::__construct();
+
+		$status = $this->session->userdata('role');
+    	if(!isset($status)){
+      redirect(base_url("Login"));
+    }
 		$this->load->model('Faskes_model');
 		$this->load->model('Kecamatan_model');
 		$this->load->model('Jenis_faskes_model');
