@@ -13,9 +13,6 @@ class Master extends CI_Controller
 		$this->load->model('Users_model');
 	}
 
-	public function index()
-	{
-	}
 
 	public function faskes()
 	{
