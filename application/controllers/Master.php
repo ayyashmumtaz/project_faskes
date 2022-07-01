@@ -162,9 +162,9 @@ class Master extends CI_Controller
 	// DELETE
 	public function jenis_faskes_delete()
 	{
-		$id_faskes = $this->input->get('id_faskes');
-		$this->Jenis_faskes_model->deleteJenisFaskes($id_faskes);
-		redirect(base_url() . 'master/jenis_faskes', 'refresh');
+		$id = $this->input->get('id_faskes');
+		$this->Jenis_faskes_model->deleteJenisFaskes($id);
+		// redirect(base_url() . 'master/jenis_faskes', 'refresh');
 	}
 
 	public function users()
