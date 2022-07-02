@@ -39,7 +39,7 @@
        <!-- Default box -->
        <div class="card card-primary card-outline">
           <div class="card-header">
-             <h3 class="card-title pt-2"><b>Edit Faskes</b></h3>
+             <h3 class="card-title pt-1"><b>Edit Faskes</b></h3>
              <a  href="<?= base_url('Master/faskes') ?>" class="btn btn-warning btn-sm float-right"><i class="fa-solid fa-xmark pr-2"></i>Batal</a>
           </div>
           <div class="card-body">

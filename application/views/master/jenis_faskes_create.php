@@ -9,8 +9,8 @@
              </div>
              <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                   <li class="breadcrumb-item active">Blank Page</li>
+                   <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                   <li class="breadcrumb-item active">Blank Page</li> -->
                 </ol>
              </div>
           </div>
@@ -24,6 +24,7 @@
        <div class="card card-primary card-outline">
           <div class="card-header">
              <h3 class="card-title"><b>Tambah Jenis Faskes</b></h3>
+             <a  href="<?= base_url('Master/jenis_faskes') ?>" class="btn btn-warning btn-sm float-right"><i class="fa-solid fa-xmark pr-2"></i>Batal</a>
           </div>
 
           <div class="card-body">

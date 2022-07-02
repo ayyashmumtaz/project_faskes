@@ -37,7 +37,7 @@
                    <table class="table table-hover table-bordered">
                       <thead class="thead-dark align-center">
                          <tr>
-                            <th>ID</th>
+                            <th class="col-1">ID</th>
                             <th>Jenis Faskes</th>
                             <th>Action</th>
                          </tr>
