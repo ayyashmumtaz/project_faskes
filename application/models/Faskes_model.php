@@ -42,7 +42,13 @@ class Faskes_model extends CI_Model
       $this->db->insert($table, $data);
    }
 
-   // UPDATE
+   // EDIT DATA
+   public function edit_data($where, $table)
+   {
+      return $this->db->get_where($table, $where);
+   }
+
+   // UPDATE DATA
    public function update_data($where, $data, $table)
    {
       $this->db->where($where);

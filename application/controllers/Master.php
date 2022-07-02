@@ -47,7 +47,6 @@ class Master extends CI_Controller
 	// CREATE SAVE
 	public function faskes_save()
 	{
-		
 		// $id = uniqid();
 		$nama_faskes = $this->input->post('nama');
 		$alamat = $this->input->post('alamat');
@@ -55,6 +54,9 @@ class Master extends CI_Controller
 		$latlong = $this->input->post('latlong');
 		$deskripsi = $this->input->post('deskripsi');
 		$rating = $this->input->post('skor_rating');
+		$foto1 = $this->input->post('foto1');
+		$foto2 = $this->input->post('foto2');
+		$foto3 = $this->input->post('foto3');
 		$website = $this->input->post('website');
 		$jumlah_dokter = $this->input->post('jumlah_dokter');
 		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
@@ -68,6 +70,9 @@ class Master extends CI_Controller
 			'latlong'			=> $latlong,
 			'deskripsi'			=> $deskripsi,
 			'skor_rating'		=> $rating,
+			'foto1'				=> $foto1,
+			'foto2'				=> $foto2,
+			'foto3'				=> $foto3,
 			'website'			=> $website,
 			'jumlah_dokter'	=> $jumlah_dokter,
 			'jumlah_pegawai'	=> $jumlah_pegagwai,
@@ -92,6 +97,64 @@ class Master extends CI_Controller
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/faskes_detail', $data);
 		$this->load->view('_partials/footer');
+	}
+
+	// UPDATE
+	public function faskes_edit()
+	{
+		$id = $this->input->get('id');
+		$data['faskes'] = $this->Faskes_model->findFaskesById($id);
+		$data['kecamatan'] = $this->Faskes_model->getKecamatan();
+		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
+
+		$where = array('id' => $id);
+		$data['faskes_edit'] = $this->Faskes_model->edit_data($where, 'faskes')->result();
+		$data['title'] = 'Faskes Edit';
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/faskes_edit', $data);
+		$this->load->view('_partials/footer');
+	}
+
+	public function faskes_update()
+	{
+		$id = $this->input->post('id');
+		$nama_faskes = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$kecamatan = $this->input->post('kecamatan_id');
+		$latlong = $this->input->post('latlong');
+		$deskripsi = $this->input->post('deskripsi');
+		$rating = $this->input->post('skor_rating');
+		$foto1 = $this->input->post('foto1');
+		$foto2 = $this->input->post('foto2');
+		$foto3 = $this->input->post('foto3');
+		$website = $this->input->post('website');
+		$jumlah_dokter = $this->input->post('jumlah_dokter');
+		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
+		$jenis_faskes = $this->input->post('jenis_faskes_id');
+
+		$data = array(
+			'nama'				=> $nama_faskes,
+			'alamat'				=> $alamat,
+			'kecamatan_id'		=> $kecamatan,
+			'latlong'			=> $latlong,
+			'deskripsi'			=> $deskripsi,
+			'skor_rating'		=> $rating,
+			'foto1'				=> $foto1,
+			'foto2'				=> $foto2,
+			'foto3'				=> $foto3,
+			'website'			=> $website,
+			'jumlah_dokter'	=> $jumlah_dokter,
+			'jumlah_pegawai'	=> $jumlah_pegagwai,
+			'jenis_id'			=> $jenis_faskes
+		);
+
+		$where = array('id' => $id);
+
+		$this->Faskes_model->update_data($where, $data, 'faskes');
+		$this->session->set_flashdata('update-data', ' ');
+		redirect(base_url() . 'master/faskes');
 	}
 
 	// DELETE
@@ -146,7 +209,7 @@ class Master extends CI_Controller
 	public function jenis_faskes_create()
 	{
 		$data['title'] = 'Tambah Jenis Faskes';
-		
+
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/jenis_faskes_create', $data);
@@ -177,7 +240,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Users';
 
-		
+
 		$data['dataUsers'] = $this->Users_model->getAllDataUsers();
 
 		$this->load->view('_partials/header', $data);

@@ -46,10 +46,10 @@
                          </tr>
                       </thead>
                       <tbody>
-                         <?php // $nomor = 1; 
+                         <?php $nomor = 1; 
                            ?>
                          <?php foreach ($dataFaskes as $df) : ?>
-                            <td class="align-middle"><?= $df->id ?></td>
+                            <td class="align-middle"><?= $nomor++ ?></td>
                             <td class="align-middle"><?= $df->nama ?></td>
                             <td class="align-middle"><?= $df->nama_faskes ?></td>
                             <td class="align-middle"><?= $df->nama_kecamatan ?></td>
@@ -59,7 +59,7 @@
                                <a href="<?= base_url('Master/faskes_detail?id=') . $df->id ?>" class="pr-2 text-info">
                                   <i class="fa-solid fa-eye pr-1 text-info"></i>View
                                </a>
-                               <a href="<?= base_url('Master/faskes_edit?nama=') . $df->id ?>" class="pr-2 text-success">
+                               <a href="<?= base_url('Master/faskes_edit?id=') . $df->id ?>" class="pr-2 text-success">
                                   <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                </a>
                                <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
@@ -107,6 +107,18 @@
        Swal.fire({
           icon: 'success',
           title: 'Data Berhasil di Simpan !',
+          showConfirmButton: false,
+          timer: 1500
+       })
+    </script>
+ <?php endif ?>
+
+ </script>
+ <?php if ($this->session->flashdata('update-data')) : ?>
+    <script>
+       Swal.fire({
+          icon: 'success',
+          title: 'Data Update Berhasil di Simpan !',
           showConfirmButton: false,
           timer: 1500
        })
