@@ -177,6 +177,7 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// CREATE
 	public function kecamatan_create()
 	{
 		$data['title'] = 'Form Kecamatan';
@@ -185,6 +186,19 @@ class Master extends CI_Controller
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/kecamatan_create');
 		$this->load->view('_partials/footer');
+	}
+
+	// CREATE SAVE
+	public function kecamatan_save()
+	{
+		$nama = $this->input->post('nama_kecamatan');
+		$data = array (
+			'nama_kecamatan' => $nama
+		);
+
+		$this->Kecamatan_model->input_data($data, 'kecamatan');
+		$this->session->set_flashdata('input-data', ' ');
+		redirect(base_url() . 'master/kecamatan');
 	}
 
 	public function kecamatan_delete()
