@@ -9,8 +9,7 @@
              </div>
              <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                   <li class="breadcrumb-item active">Blank Page</li>
+                   <li class="breadcrumb-item"><a href="<?= base_url('Master/faskes') ?>">Home</a></li>
                 </ol>
              </div>
           </div>
@@ -57,9 +56,9 @@
                       </div>
                       <div class="form-group">
                          <label for="skor_rating" class="form-label">Skor Rating</label>
-                         <input id="skor_rating" name="skor_rating" placeholder="Tulis Skor Rating Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <input id="skor_rating" name="skor_rating" placeholder="Masukkan Rating Faskes Anda dari 0.0 - 10.0" type="text" class="form-control" onchange="this.value = (this.value > 10.0) ? 10.0 : ((this.value < 0) ? 0 : this.value);" required>
                       </div>
-                      <!-- <label for="foto" class="form-label">Foto 1</label>
+                      <label for="foto" class="form-label">Foto 1</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
                             <input name="foto1" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
@@ -88,18 +87,18 @@
                          <div class="input-group-append">
                             <button class="btn btn-success" type="button">Button</button>
                          </div>
-                      </div> -->
+                      </div>
                       <div class="form-group mt-3">
                          <label for="website" class="form-label">Website</label>
                          <input id="website" name="website" placeholder="Tulis Website Fasilitas Kesehatan" type="text" class="form-control" required>
                       </div>
                       <div class="form-group">
                          <label for="jumlah_dokter" class="form-label">Jumlah Dokter</label>
-                         <input id="jumlah_dokter" name="jumlah_dokter" placeholder="Tulis Jumlah Dokter Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <input id="jumlah_dokter" name="jumlah_dokter" placeholder="Tulis Jumlah Dokter Fasilitas Kesehatan" type="number" class="form-control" required>
                       </div>
                       <div class="form-group">
                          <label for="jumlah_pegawai" class="form-label">Jumlah Pegawai</label>
-                         <input id="jumlah_pegawai" name="jumlah_pegawai" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="text" class="form-control" required>
+                         <input id="jumlah_pegawai" name="jumlah_pegawai" placeholder="Tulis Jumlah Pegawai Fasilitas Kesehatan" type="number" class="form-control" required>
                       </div>
                       <div class="form-group">
                          <label for="jenis_id" class="form-label">Jenis Faskes</label>
