@@ -104,11 +104,11 @@
                       <tr>
                          <td>Action</td>
                          <td>
-                            <a href="<?= base_url('Master/edit?nama=') . $faskes->id ?>" class="pr-2 text-success">
-                               <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
+                            <a href="<?= base_url('Master/faskes_edit?id=') . $faskes->id ?>" class="btn btn-sm btn-success mr-1">
+                               <i class="fa-solid fa-file-pen pr-1"></i>Edit
                             </a>
-                            <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
-                               <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
+                            <a type="button" class="btn btn-sm btn-danger pr-2" onclick="return deletedata()">
+                               <i class="fa-solid fa-trash pr-1"></i>Delete
                             </a>
                          </td>
                       </tr>

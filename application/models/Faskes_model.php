@@ -29,11 +29,30 @@ class Faskes_model extends CI_Model
 
    public function findFaskesById($id)
    {
-      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.id', 'LEFT');
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
       $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'left');
 
       $query = $this->db->get_where('faskes', array('id' => $id));
       return $query->row();
+   }
+
+   // CREATE SAVE
+   public function input_data($data, $table)
+   {
+      $this->db->insert($table, $data);
+   }
+
+   // EDIT DATA
+   public function edit_data($where, $table)
+   {
+      return $this->db->get_where($table, $where);
+   }
+
+   // UPDATE DATA
+   public function update_data($where, $data, $table)
+   {
+      $this->db->where($where);
+      $this->db->update($table, $data);
    }
 
    // DELETE

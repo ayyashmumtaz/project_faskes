@@ -13,4 +13,18 @@ class Jenis_faskes_model extends CI_Model
 
       return $query->result();
    }
+
+   // CREATE
+   public function input_data($data, $table)
+   {
+      $this->db->insert($table, $data);
+   }
+
+   // DELETE
+   public function deleteJenisFaskes($id, $table)
+   {
+      $this->db->where($id);
+      $this->db->delete($table);
+   }
+
 }

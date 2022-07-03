@@ -30,7 +30,7 @@
              <div class="row">
                 <div class="form-group row ml-2 mb-0">
                    <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="#" class="text-white">Tambah Kecamatan</a>
+                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/kecamatan_create') ?>" class="text-white">Tambah Kecamatan</a>
                    </button>
                 </div>
                 <div class="col-12 table-responsive">
@@ -38,24 +38,18 @@
                       <table class="table table-hover table-bordered">
                          <thead class="thead-dark align-center">
                             <tr>
-                               <th>No</th>
+                               <th class="col-1">ID</th>
                                <th>Kecamatan</th>
                                <th>Action</th>
                             </tr>
                          </thead>
                          <tbody>
-                            <?php $nomor = 1; ?>
+                            <?php // $nomor = 1; ?>
                             <?php foreach ($dataKecamatan as $k) : ?>
                                <tr>
-                                  <td><?= $nomor++ ?></td>
+                                  <td><?= $k->id_kecamatan ?></td>
                                   <td><?= $k->nama_kecamatan ?></td>
                                   <td>
-                                     <a href="<?= base_url('Master/detail?id=') . $k->id_kecamatan ?>" class="pr-2 text-info">
-                                        <i class="fa-solid fa-eye pr-1 text-info"></i>View
-                                     </a>
-                                     <a href="<?= base_url('Master/edit?id=') . $k->id_kecamatan ?>" class="pr-2 text-success">
-                                        <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
-                                     </a>
                                      <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
                                         <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                      </a>
@@ -75,24 +69,35 @@
  </div>
  <!-- /.content-wrapper -->
  <script>
-   function deletedata(){
-    Swal.fire({
-       title: 'Hapus Data?',
-       text: "Anda akan menghapus data Kecamatan <?= $k->nama_kecamatan;?>",
-       icon: 'warning',
-       showCancelButton: true,
-       confirmButtonColor: '#3085d6',
-       cancelButtonColor: '#d33',
-       confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-       if (result.isConfirmed) {
-         window.location = "<?= base_url('Master/kecamatan_delete?id=') . $k->id_kecamatan ?>";
-          Swal.fire(
-             'Deleted!',
-             'Kecamatan <?= $k->nama_kecamatan;?> Berhasil di Hapus',
-             'success'
-          )
-       }
-    })
-   }
+    function deletedata() {
+       Swal.fire({
+          title: 'Hapus Data?',
+          text: "Anda akan menghapus data Kecamatan <?= $k->nama_kecamatan; ?>",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+          if (result.isConfirmed) {
+             window.location = "<?= base_url('Master/kecamatan_delete?id=') . $k->id_kecamatan ?>";
+             Swal.fire(
+                'Deleted!',
+                'Kecamatan <?= $k->nama_kecamatan; ?> Berhasil di Hapus',
+                'success'
+             )
+          }
+       })
+    }
  </script>
+
+ <?php if ($this->session->flashdata('input-data')) : ?>
+    <script>
+       Swal.fire({
+          icon: 'success',
+          title: 'Data Kecamatan Berhasil di Simpan !',
+          showConfirmButton: false,
+          timer: 1500
+       })
+    </script>
+ <?php endif ?>
