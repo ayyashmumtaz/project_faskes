@@ -21,12 +21,10 @@
           <h6 class="select-title"><i class="fa fa-location-dot me-2"></i>Kecamatan</h6>
 
           <select id="kecamatan" name="kecamatan" class="form-select btn btn-primary border-0 w-100">
-            <option selected value="">All</option>
-            <option value="Cilodong">Cilodong</option>
-            <option value="Sukmajaya">Sukmajaya</option>
-            <option value="Beji">Beji</option>
-            <option value="Pancoran Mas">Pancoran Mas</option>
-            <option value="Sawangan">Sawangan</option>
+          <option value="">All</option>
+            <?php foreach ($kecamatan as $i) { ?>
+            <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
+            <?php } ?>
           </select>
         </div>
 
@@ -34,12 +32,10 @@
           <h6 class="select-title"><i class="fa fa-notes-medical me-2"></i>Kategori</h6>
 
           <select id="kategori" name="kategori" class="form-select btn btn-primary border-0 w-100">
-            <option selected value="">All</option>
-            <option value="Rumah Sakit">Rumah Sakit</option>
-            <option value="Klinik Gigi">Klinik Gigi</option>
-            <option value="Klinik Umum">Klinik Umum</option>
-            <option value="Puskesmas">Puskesmas</option>
-            <option value="Apotek">Apotek</option>
+            <option value="">All</option>
+            <?php foreach ($jenis_faskes as $jf) { ?>
+              <option value="<?= $jf['id_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
+            <?php } ?>
           </select>
         </div>
 

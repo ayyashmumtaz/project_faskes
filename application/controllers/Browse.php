@@ -13,6 +13,10 @@ class Browse extends CI_Controller
   }
 
   public function index() { // UNUSED
+
+    $data['kecamatan'] = $this->Faskes_model->getKecamatan();
+		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
+    
     $data['title'] = 'SIFASKES';
     $data['faskes'] = $this->Faskes_model->getAllDataFaskes();
     $this->load->view('frontend/layout/header', $data);
@@ -23,6 +27,10 @@ class Browse extends CI_Controller
   }
 
   public function search() {
+
+    $data['kecamatan'] = $this->Faskes_model->getKecamatan();
+		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
+
     $data['title'] = 'SIFASKES';
     $kecamatan = $this->input->get('kecamatan', true);
     $kategori = $this->input->get('kategori', true);
@@ -46,6 +54,10 @@ class Browse extends CI_Controller
   }
   
   public function searchBox() {
+
+    $data['kecamatan'] = $this->Faskes_model->getKecamatan();
+		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
+
     $data['title'] = 'SIFASKES';
     $data['faskes'] = $this->Faskes_model->getAllDataFaskes();
     if($this->input->get('keyword')) {
