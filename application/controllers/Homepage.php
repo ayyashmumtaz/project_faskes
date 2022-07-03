@@ -8,4 +8,11 @@ class Homepage extends CI_Controller {
     $this->load->view('frontend/homepage/index', $data);
     $this->load->view('frontend/layout/footer');
   }
+
+  public function browseAll() {
+    $data['title'] = 'Browse';
+    $this->load->view('frontend/layout/header', $data);
+    $this->load->view('frontend/homepage/browseAll', $data);
+    $this->load->view('frontend/layout/footer');
+  }
 }

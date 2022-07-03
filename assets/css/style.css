@@ -1,3 +1,4 @@
+/* HOMEPAGE */
 .cta {
 	width: 80%;
 }
@@ -59,7 +60,31 @@
   -webkit-backdrop-filter: blur(30px);
 }
 
+/* BROWSE PAGE */
+.srch-card-browse {
+	margin-top: 80px !important;
+	display: none;
+}
 
+
+
+.modal-btn {
+	/* margin-top: 93px !important; */
+	top: 85vh !important;
+	left: 80vw !important;
+	z-index: 15;
+}
+.btn {
+	--bs-btn-focus-shadow-rgb: none;
+}
+
+.head-srch {
+	margin-top: 60px !important;
+}
+
+.srch-btn {
+	--bs-btn-border-radius: none;
+}
 
 /* SCREEN BREAKPOINT */
 /* X-Small devices (portrait phones, less than 576px) */
@@ -134,6 +159,22 @@
 	.cari {
 		display: none;
 	}
+
+	.srch-card-browse {
+		display: flex;
+	}
+}
+
+a.card {
+	text-decoration: none;
+	color: #151515;
+	transform: scale(1);
+	transition: transform .15s;
+}
+
+a.card:hover {
+	transform: scale(1.1);
+	z-index: 5;
 }
 
 /* Large devices (desktops, 992px and up) */

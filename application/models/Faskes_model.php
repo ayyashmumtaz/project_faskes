@@ -9,7 +9,7 @@ class Faskes_model extends CI_Model
    {
       $this->db->select('*');
       $this->db->from('faskes');
-      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.id', 'LEFT');
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
       $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'left');
       $query = $this->db->get();
 
@@ -43,4 +43,28 @@ class Faskes_model extends CI_Model
       $this->db->delete('faskes');
    }
 
+
+   // Select keacamatan, kategori from faskes
+   public function specificSearch($kecamatan, $kategori) {
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
+      $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'LEFT');
+      $this->db->like('nama_kecamatan', $kecamatan, 'before');
+      $this->db->like('nama_faskes', $kategori, 'before');
+      $query = $this->db->get('faskes');
+      return $query->result();
+   }
+
+   // Search By Keyword
+   public function searchByKeyword() {
+      $keyword = $this->input->get('keyword', true);
+      $kecamatan = $this->session->userdata('kecamatan');
+      $kategori = $this->session->userdata('kategori');
+      $this->db->join('kecamatan', 'kecamatan.id_kecamatan = faskes.kecamatan_id', 'LEFT');
+      $this->db->join('jenis_faskes', 'jenis_faskes.id_faskes = faskes.jenis_id', 'LEFT');
+      $this->db->like('nama', $keyword);
+      $this->db->like('nama_kecamatan', $kecamatan);
+      $this->db->like('nama_faskes', $kategori);
+      $query = $this->db->get('faskes');
+      return $query->result();
+   }
 }
