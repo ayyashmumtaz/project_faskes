@@ -23,7 +23,7 @@
           <select id="kecamatan" name="kecamatan" class="form-select btn btn-primary border-0 w-100">
           <option value="">All</option>
             <?php foreach ($kecamatan as $i) { ?>
-            <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
+            <option value="<?php echo $i['nama_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
             <?php } ?>
           </select>
         </div>
