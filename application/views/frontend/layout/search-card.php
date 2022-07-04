@@ -21,7 +21,7 @@
         <select id="kategori" name="kategori" class="form-select btn btn-primary border-0 w-100">
           <option value="">All</option>
           <?php foreach ($jenis_faskes as $jf) { ?>
-            <option value="<?= $jf['id_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
+            <option value="<?= $jf['nama_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
           <?php } ?>
         </select>
       </div>
