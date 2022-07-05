@@ -2,7 +2,7 @@
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-4">
     <?php foreach ($faskes as $f) : ?>
       <div class="col">
-        <a href="<?= base_url() ?>browse/detail" class="card h-100 border-0 rounded-4 shadow">
+        <a href="<?= base_url() ?>browse/detail/<?= $f->id ?>" class="card h-100 border-0 rounded-4 shadow">
           <img src="<?= base_url() ?>assets/img/building-hero2.png" class="card-img-top rounded-4" alt="...">
           <div class="card-body d-block">
             <p class="card-text"><small class="text-muted"><?= '<i class="fa fa-location-dot"></i> ' . $f->nama_kecamatan . '<i class="fa fa-notes-medical ms-3"></i> ' . $f->nama_faskes ?></small></p>

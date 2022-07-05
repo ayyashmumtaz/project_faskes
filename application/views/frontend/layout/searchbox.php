@@ -30,17 +30,17 @@
     <input type="search" name="keyword" class="form-control rounded border-0" style="font-size: .8rem;" placeholder="<?php
       if (isset($kecamatanAll) && !isset($kategoriAll)) { //Kecamatan dipilih All
         if (isset($fas)) {
-          echo 'Cari ' . $fas->nama_faskes . ' di ' . $kecamatanAll;
+          echo 'Cari nama ' . $fas->nama_faskes . ' di ' . $kecamatanAll;
         } else {
           echo 'Maaf data yang dicari tidak ada';
         }
       } elseif (isset($kategoriAll) && !isset($kecamatanAll)) { //Kategori dipilih All
-        echo 'Cari ' . $kategoriAll . ' di ' . $fas->nama_kecamatan;
+        echo 'Cari nama ' . strtolower($kategoriAll) . ' di ' . $fas->nama_kecamatan;
       } elseif (isset($kecamatanAll) && isset($kategoriAll)) { //kecamatan & kategori dipilih All
-        echo 'Cari ' . $kategoriAll . ' di ' . $kecamatanAll;
+        echo 'Cari nama ' . strtolower($kategoriAll) . ' di ' . $kecamatanAll;
       } else { //Kecamatan & kategori tidak dipilih All
         if (isset($fas)) {
-          echo 'Cari ' . strtolower($fas->nama_faskes) . ' di ' . $fas->nama_kecamatan;
+          echo 'Cari nama ' . strtolower($fas->nama_faskes) . ' di ' . $fas->nama_kecamatan;
         } else {
           echo 'Maaf data yang dicari tidak ada';
         }

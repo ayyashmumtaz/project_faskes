@@ -82,4 +82,12 @@ class Browse extends CI_Controller
     $this->load->view('frontend/browse/searchbox-result', $data);
     $this->load->view('frontend/layout/footer');
   }
+  
+  public function detail($id) {
+    $data['title'] = 'SIFASKES';
+    $data['faskes'] = $this->Faskes_model->findFaskesById($id);
+    $this->load->view('frontend/layout/header', $data);
+    $this->load->view('frontend/browse/detail', $data);
+    $this->load->view('frontend/layout/footer');
+  }
 }
