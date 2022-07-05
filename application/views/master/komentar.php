@@ -51,7 +51,7 @@
                          <?php foreach ($dataKomentar as $k) : ?>
                             <tr>
                                <td class="align-middle"><?= $nomor++ ?></td>
-                               <td class="align-middle"><?= $k->nama ?></td>
+                               <td class="align-middle"><?= $k->nama_faskes ?></td>
                                <td class="align-middle"><?= $k->isi ?></td>
                                <td class="align-middle"><?= $k->nama_rating ?></td>
                                <td class="align-middle"><?= $k->username ?></td>
