@@ -120,6 +120,12 @@
                 </a>
               </li>
                <li class="nav-item">
+                <a href="<?= site_url('Master/nilai_rating');?>" class="nav-link">
+                <i class="far fa-circle nav-icon nav-icon"></i> 
+                  <p>Kategori Rating</p>
+                </a>
+              </li>
+               <li class="nav-item">
                 <a href="<?= site_url('Master/komentar');?>" class="nav-link">
                 <i class="far fa-circle nav-icon nav-icon"></i> 
                   <p>Data Komentar</p>

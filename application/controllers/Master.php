@@ -17,6 +17,7 @@ class Master extends CI_Controller
 		$this->load->model('Jenis_faskes_model');
 		$this->load->model('Komentar_model');
 		$this->load->model('Users_model');
+		$this->load->model('Rating_model');
 	}
 
 
@@ -260,6 +261,18 @@ class Master extends CI_Controller
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/users', $data);
+		$this->load->view('_partials/footer');
+	}
+
+	public function nilai_rating()
+	{
+		$data['title'] = 'Ketentuan Rating';
+
+		$data['dataRating'] = $this->Rating_model->getAllDataRating();
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/nilai_rating', $data);
 		$this->load->view('_partials/footer');
 	}
 
