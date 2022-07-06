@@ -85,6 +85,65 @@ echo $faskes->nama_faskes;
       <?= form_close(); ?>
     </div>
   </div>
+  
+  <div class="row">
+    <div class="col-md-7 px-3 mt-4 mb-2">
+      <h3>Ulasan</h3>
+      <h3><i class="fa fa-star text-warning"></i><span class="text-muted"> <?= $faskes->skor_rating ?></span></h3>
+    </div>
+
+    <?php foreach ($komentar as $k) {
+      $k;
+    } ?>
+    <div class="col-md-6 mb-3">
+
+      <?php if ($k->nama_faskes == $faskes->nama) : ?>
+        <div class="card bg-white rounded-4 shadow border-0">
+          <div class="card-header d-flex align-items-center">
+            <i class="fa-solid fa-user fs-1"></i>
+
+            <div class="ms-3">
+              <p class="fs-5 mb-0"> <?= $k->username ?></p>
+
+              <p class="mb-0" style="font-size: .8rem;">
+                <?php 
+                  switch($k->nama_rating) :
+                    case 'Sangat Bagus': $jmlBintang = 5; break;
+                    case 'Bagus': $jmlBintang = 4; break;
+                    case 'Biasa Aja': $jmlBintang = 3; break;
+                    case 'Kurang Bagus': $jmlBintang = 2; break;
+                    case 'Jelek': $jmlBintang = 1; break;
+                  endswitch;
+                ?>
+
+                <?php for ($i = 0; $i < $jmlBintang; $i++) : ?>
+                  <small><i class="fa fa-star text-warning"></i></small>
+                <?php endfor ?>
+
+              <span class="fw-bold">- <?= $k->nama_rating ?></span>
+              <p class="text-muted mb-0" style="font-size: .8rem;"><?= $k->tanggal ?></p>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="card-body p-3">
+            <blockquote class="blockquote mb-0">
+              <p style="font-size: 1rem;"><?= $k->isi ?></p>
+              <footer class="blockquote-footer">
+
+              </footer>
+            </blockquote>
+
+
+          </div>
+        </div>
+      <?php else : ?>
+        <p class="px-3">Jadilah yang pertama berkomentar</p>
+      <?php endif ?>
+    </div>
+  </div>
 
 
 </div>
