@@ -31,6 +31,7 @@ class Login extends CI_Controller {
 		$sess_data['logged_in'] = 'Sudah Login';
 		$sess_data['username'] = $sess->username;
 		$sess_data['role'] = $sess->role;
+		$sess_data['id_user'] = $sess->id;
 		$this->session->set_userdata($sess_data);
 		}
 	$status = $this->session->userdata('role');

@@ -7,8 +7,8 @@ class Komentar_model extends CI_Model
 
    public function getAllDataKomentar()
    {
-      
-      $this->db->select('faskes.nama as nama_faskes, komentar.isi, komentar.tanggal, nilai_rating.nama_rating as nama_rating, users.*');
+
+      $this->db->select('faskes.nama as nama_faskes, komentar.isi, komentar.tanggal, nilai_rating.nama as nama_rating, users.*');
       $this->db->from('komentar');
       $this->db->join('faskes', 'faskes.id = komentar.faskes_id', 'LEFT');
       $this->db->join('users', 'users.id = komentar.users_id', 'LEFT');
@@ -19,14 +19,21 @@ class Komentar_model extends CI_Model
    }
 
    // CREATE SAVE
-   public function input_data($data, $table)
+   public function insertKomentar()
    {
-      $this->db->insert($table, $data);
+      date_default_timezone_set('Asia/Jakarta');
+      $data = [
+         'tanggal' => date('Y-m-d'),
+         'isi' => $this->input->post('isi', true),
+         'users_id' => $this->session->userdata('id_user', true),
+         'faskes_id' => $this->session->userdata('faskes_id', true),
+         'nilai_rating_id' => $this->input->post('star', true)
+      ];
+      return $this->db->insert('komentar', $data);
    }
-   
+
    public function getRating()
    {
       return $this->db->get('nilai_rating')->result_array();
    }
-
 }

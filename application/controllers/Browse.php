@@ -13,17 +13,9 @@ class Browse extends CI_Controller
   }
 
   public function index() { // UNUSED
-
-    $data['kecamatan'] = $this->Faskes_model->getKecamatan();
-		$data['jenis_faskes'] = $this->Faskes_model->getJenisFaskes();
-    
-    $data['title'] = 'SIFASKES';
-    $data['faskes'] = $this->Faskes_model->getAllDataFaskes();
-    $this->load->view('frontend/layout/header', $data);
-    $this->load->view('frontend/layout/search-card', $data);
-    $this->load->view('frontend/layout/search-modal', $data);
-    $this->load->view('frontend/browse/index', $data);
-    $this->load->view('frontend/layout/footer');
+    if(base_url(uri_string()) == 'http://127.0.0.1/proyek-faskes-depok/project_faskes/browse') {
+      redirect('browse/search?kecamatan=&kategori=&submit=');
+    }
   }
 
   public function search() {
@@ -85,10 +77,18 @@ class Browse extends CI_Controller
   
   public function detail($id) {
     $data['title'] = 'SIFASKES';
+    $this->session->set_userdata('faskes_id', $id);
     $data['faskes'] = $this->Faskes_model->findFaskesById($id);
     $data['komentar'] = $this->Komentar_model->getAllDataKomentar();
+    $data['nilai_rating'] = $this->Komentar_model->getRating();
     $this->load->view('frontend/layout/header', $data);
     $this->load->view('frontend/browse/detail', $data);
     $this->load->view('frontend/layout/footer');
+  }
+  
+  public function komentar() {
+    $data['title'] = 'SIFASKES';
+    $data['comments'] = $this->Komentar_model->insertKomentar();
+    redirect('browse/detail/'.$this->session->userdata());
   }
 }
