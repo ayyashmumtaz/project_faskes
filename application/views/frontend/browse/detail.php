@@ -80,10 +80,10 @@
 
     <div class="col-md-6 mb-3">
 
-      <?php foreach ($komentar as $k) : ?>
-        <?php $k ?>
-
-        <?php if ($k->nama_faskes == $faskes->nama) : ?>
+      
+      <?php if ($komentar[0]->nama_faskes == $faskes->nama) : ?>
+        <?php foreach ($komentar as $k) : ?>
+          <?php $k ?>
           <div class="card bg-white rounded-4 shadow border-0 mb-4">
             <div class="card-header d-flex align-items-center">
               <i class="fa-solid fa-user fs-1"></i>
@@ -134,10 +134,10 @@
 
             </div>
           </div>
-        <?php else : ?>
-          <p class="px-3">Jadilah yang pertama berkomentar</p>
-        <?php endif ?>
-      <?php endforeach ?>
+          <?php endforeach ?>
+          <?php else : ?>
+            <p class="px-3">Jadilah yang pertama berkomentar</p>
+          <?php endif ?>
     </div>
   </div>
 </div>
