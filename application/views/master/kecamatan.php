@@ -50,7 +50,7 @@
                                   <td><?= $k->id_kecamatan ?></td>
                                   <td><?= $k->nama_kecamatan ?></td>
                                   <td>
-                                     <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
+                                     <a type="button" class="pr-2 text-danger" href="<?= base_url('Master/kecamatan_delete?id=') . $k->id_kecamatan ?>">
                                         <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                      </a>
                                   </td>
@@ -68,28 +68,17 @@
     <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
- <script>
-    function deletedata() {
+ <?php if ($this->session->flashdata('delete-data')) : ?>
+    <script>
        Swal.fire({
-          title: 'Hapus Data?',
-          text: "Anda akan menghapus data Kecamatan <?= $k->nama_kecamatan; ?>",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-       }).then((result) => {
-          if (result.isConfirmed) {
-             window.location = "<?= base_url('Master/kecamatan_delete?id=') . $k->id_kecamatan ?>";
-             Swal.fire(
-                'Deleted!',
-                'Kecamatan <?= $k->nama_kecamatan; ?> Berhasil di Hapus',
-                'success'
-             )
-          }
+          icon: 'success',
+          title: 'Data Berhasil di Hapus !',
+          showConfirmButton: false,
+          timer: 1500
        })
-    }
- </script>
+    </script>
+ <?php endif ?>
+
 
  <?php if ($this->session->flashdata('input-data')) : ?>
     <script>

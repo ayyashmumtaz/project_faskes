@@ -62,7 +62,7 @@
                                <a href="<?= base_url('Master/faskes_edit?id=') . $df->id ?>" class="pr-2 text-success">
                                   <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                </a>
-                               <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
+                               <a type="button" class="pr-2 text-danger" href="<?= base_url('Master/faskes_delete?id=') . $df->id ?>">
                                   <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                </a>
                             </td>
@@ -80,33 +80,23 @@
  </div>
  <!-- /.content-wrapper -->
 
- <script>
-    function deletedata() {
-       Swal.fire({
-          title: 'Hapus Data?',
-          text: "Anda akan menghapus data Faskes <?= $df->nama; ?>",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-       }).then((result) => {
-          if (result.isConfirmed) {
-             window.location = "<?= base_url('Master/faskes_delete?id=') . $df->id ?>";
-             Swal.fire(
-                'Deleted!',
-                'Faskes <?= $df->nama; ?> Berhasil di Hapus',
-                'success'
-             )
-          }
-       })
-    }
- </script>
+
  <?php if ($this->session->flashdata('input-data')) : ?>
     <script>
        Swal.fire({
           icon: 'success',
           title: 'Data Berhasil di Simpan !',
+          showConfirmButton: false,
+          timer: 1500
+       })
+    </script>
+ <?php endif ?>
+
+ <?php if ($this->session->flashdata('delete-data')) : ?>
+    <script>
+       Swal.fire({
+          icon: 'success',
+          title: 'Data Berhasil di Hapus !',
           showConfirmButton: false,
           timer: 1500
        })

@@ -213,6 +213,7 @@ class Master extends CI_Controller
 	{
 		$id = $this->input->get('id');
 		$this->Faskes_model->deleteFaskes($id);
+		$this->session->set_flashdata('delete-data', ' ');
 		redirect(base_url() . 'master/faskes', 'refresh');
 	}
 
@@ -256,6 +257,7 @@ class Master extends CI_Controller
 	{
 		$id = $this->input->get('id');
 		$this->Kecamatan_model->deleteKecamatan($id);
+		$this->session->set_flashdata('delete-data', ' ');
 		redirect(base_url() . 'master/kecamatan', 'refresh');
 	}
 
@@ -298,6 +300,7 @@ class Master extends CI_Controller
 	{
 		$id = array('id_faskes' => $id);
 		$this->Jenis_faskes_model->deleteJenisFaskes($id, 'jenis_faskes');
+		$this->session->set_flashdata('delete-data', ' ');
 		redirect(base_url() . 'master/jenis_faskes', 'refresh');
 	}
 

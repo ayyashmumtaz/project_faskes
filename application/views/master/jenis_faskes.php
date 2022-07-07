@@ -48,7 +48,7 @@
                                <td><?= $jf->id_faskes ?></td>
                                <td><?= $jf->nama_faskes ?></td>
                                <td>
-                                  <a type="button" class="pr-2 text-danger" onclick="return deletedata()">
+                                  <a type="button" class="pr-2 text-danger" href="<?= base_url('Master/jenis_faskes_delete/') . $jf->id_faskes ?>">
                                      <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                   </a>
                                </td>
@@ -67,25 +67,13 @@
  </div>
  <!-- /.content-wrapper -->
 
- <script>
-    function deletedata() {
+ <?php if ($this->session->flashdata('delete-data')) : ?>
+    <script>
        Swal.fire({
-          title: 'Hapus Data?',
-          text: "Anda akan menghapus data Faskes <?= $jf->nama_faskes; ?>",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-       }).then((result) => {
-          if (result.isConfirmed) {
-             window.location = "<?= base_url('Master/jenis_faskes_delete/') . $jf->id_faskes ?>";
-             Swal.fire(
-                'Deleted!',
-                'Faskes <?= $jf->nama_faskes; ?> Berhasil di Hapus',
-                'success'
-             )
-          }
+          icon: 'success',
+          title: 'Data Berhasil di Hapus !',
+          showConfirmButton: false,
+          timer: 1500
        })
-    }
- </script>
+    </script>
+ <?php endif ?>
