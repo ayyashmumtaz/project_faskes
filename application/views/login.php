@@ -1,6 +1,11 @@
-
-               <?php if($this->session->flashdata('login_gagal')): ?>
-             <script type="text/javascript">
+<?php if ($this->session->flashdata('login_gagal')) : ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong><?= $this->session->flashdata('login_gagal') ?></strong>. Silakan dicek kembali
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- <script type="text/javascript">
                let timerInterval
 Swal.fire({
   title: 'Gagal!',
@@ -17,10 +22,10 @@ Swal.fire({
   }
 
 })
-            </script>
-                  
-           
-        <?php endif ?>
+            </script> -->
+
+
+<?php endif ?>
 
 <body class="bg-gradient-primary">
 
@@ -34,38 +39,35 @@ Swal.fire({
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-    
-                         
-                            <div class="col-lg-12">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <img style="margin-bottom: 2%" src="<?= base_url('assets/img/logo_faskes.png');?>" height="200">
-                                        
-                                        <h2 class=" mb-4" style="color: black;">FASKES KOTA DEPOK</h2>
+
+
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <img style="margin-bottom: 2%" src="<?= base_url('assets/img/logo_faskes.png'); ?>" height="200">
+
+                                    <h2 class=" mb-4" style="color: black;">FASKES KOTA DEPOK</h2>
+                                </div>
+                                <form class="user" action="<?php echo base_url('login/aksi_login'); ?>" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="username" aria-describedby="emailHelp" placeholder="Masukan Username">
                                     </div>
-                                    <form class="user" action="<?php echo base_url('login/aksi_login'); ?>" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                name="username" aria-describedby="emailHelp"
-                                                placeholder="Masukan Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                name="password" placeholder="Masukan Password">
-                                        </div>
-                                      
-                                        <input type="submit" class="btn btn-primary btn-user btn-block">
-                                          
-                                   
-                                        <hr>
-                                      
-                                    </form>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user" name="password" placeholder="Masukan Password">
+                                    </div>
+
+                                    <input type="submit" class="btn btn-primary btn-user btn-block">
+
+
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Lupa Password?</a>
-                                    </div>
-                                   
-                                
+
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="forgot-password.html">Lupa Password?</a>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -76,4 +78,3 @@ Swal.fire({
         </div>
 
     </div>
-

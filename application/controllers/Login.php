@@ -35,14 +35,17 @@ class Login extends CI_Controller {
 		}
 	$status = $this->session->userdata('role');
 	if ($status == 'administrator') 
-		 {
+		{
 			$this->session->set_flashdata('sukses', ' ');
 			redirect(base_url("Home"));
 		}elseif ($status == 'public') {
 			$this->session->set_flashdata('login_berhasil', ' ');
-			redirect(base_url("Spk/a3"));
+			redirect(base_url("Homepage"));
 		}
-	} echo "errors";
+	} else {
+		$this->session->set_flashdata('login_gagal', 'Username atau Password salah');
+		redirect(base_url('Login'));
+	} 
 }
 	
 
