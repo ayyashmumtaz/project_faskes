@@ -30,7 +30,7 @@
              <div class="row">
                 <div class="form-group row ml-2">
                    <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="#" class="text-white">Tambah Komentar</a>
+                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/komentar_create') ?>" class="text-white">Tambah Komentar</a>
                    </button>
                 </div>
                 <div class="col-12 table-responsive">
@@ -38,11 +38,11 @@
                       <thead class="thead-dark align-center">
                          <tr>
                             <th class="align-middle">No</th>
+                            <th class="align-middle">Tanggal Komentar</th>
+                            <th class="align-middle">Username</th>
                             <th class="align-middle">Nama Faskes</th>
                             <th class="align-middle">Komentar</th>
                             <th class="align-middle">Rating</th>
-                            <th class="align-middle">Username</th>
-                            <th class="align-middle">Tanggal Komentar</th>
                             <th class="align-middle">Action</th>
                          </tr>
                       </thead>
@@ -51,15 +51,12 @@
                          <?php foreach ($dataKomentar as $k) : ?>
                             <tr>
                                <td class="align-middle"><?= $nomor++ ?></td>
+                               <td class="align-middle"><?= $k->tanggal ?></td>
+                               <td class="align-middle"><?= $k->username ?></td>
                                <td class="align-middle"><?= $k->nama_faskes ?></td>
                                <td class="align-middle"><?= $k->isi ?></td>
                                <td class="align-middle"><?= $k->nama_rating ?></td>
-                               <td class="align-middle"><?= $k->username ?></td>
-                               <td class="align-middle"><?= $k->tanggal ?></td>
                                <td class="align-middle">
-                                  <a href="<?= base_url('Master/detail?id=') . $k->id ?>" class="pr-2 text-info">
-                                     <i class="fa-solid fa-eye pr-1 text-info"></i>View
-                                  </a>
                                   <a href="<?= base_url('Master/edit?id=') . $k->id ?>" class="pr-2 text-success">
                                      <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                   </a>
