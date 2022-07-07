@@ -1,7 +1,7 @@
 
 <?php foreach ($faskes as $fas) {$fas;} ?>
 
-<div class="row row-cols-md-12 justify-content-between align-items-center px-3 head-srch">
+<div class="row row-cols-md-12 justify-content-between align-items-center px-3 head-srch header-margin">
   <div class="col-md-5 px-0 pb-2">
     <h6 class="select-title m-0">
       <?php if (isset($kecamatanAll) && !isset($kategoriAll)) { //Kecamatan dipilih All

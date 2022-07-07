@@ -1,5 +1,5 @@
 <div class="container-lg">
-  <div class="row mt-5">
+  <div class="row mt-5 header-margin">
     <div class="col-md-12">
       <h1 class="fs-2 mb-0"><?= $faskes->nama ?></h1>
     </div>

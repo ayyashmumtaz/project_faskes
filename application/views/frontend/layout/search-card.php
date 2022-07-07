@@ -2,7 +2,7 @@
   <?= form_open('browse/search', 'method = GET'); ?>
   <!-- Specific Faskes Search Card -->
   <div id="srch-card-browse" class="container justify-content-center p-0 mt-5 srch-card-browse">
-    <div class="row row-cols-sm-12 w-100 rounded-4 bg-glass align-items-center justify-content-center py-2">
+    <div class="row row-cols-sm-12 w-100 rounded-4 bg-glass align-items-center justify-content-center py-2 header-srch-card-margin">
 
       <div class="col-md-4 mt-2">
         <h6 class="select-title"><i class="fa fa-location-dot me-2"></i>Kecamatan</h6>

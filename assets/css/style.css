@@ -101,6 +101,16 @@
 p.desc-summary {
 	font-size: 1rem;
 }
+
+.header-margin {
+	margin-top: 4rem !important;
+}
+.header-margin {
+	margin-top: 4rem !important;
+}
+.header-srch-card-margin {
+	margin-top: .7rem !important;
+}
 /* /. DETAIL PAGE */
 
 /* SCREEN BREAKPOINT */
@@ -114,7 +124,6 @@ p.desc-summary {
   .navbar-brand {
     font-size: 1rem;
   }
-
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -180,7 +189,15 @@ p.desc-summary {
 	.srch-card-browse {
 		display: flex;
 	}
+
+	header {
+		margin-top: 5.2rem;
+	}
+	.logo {
+		max-height: 60px !important;
+	}
 }
+
 
 a.card {
 	text-decoration: none;
