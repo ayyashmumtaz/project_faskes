@@ -26,8 +26,8 @@
   <header>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
-      <div class="container px-5">
-        <a class="navbar-brand fw-bold" href="<?= base_url() ?>homepage"><img src="<?= base_url('');?>assets/img/logo_homepage.png" style="max-height: 60px;"></a>
+      <div class="container px-3 ps-1">
+        <a class="navbar-brand fw-bold" href="<?= base_url() ?>homepage"><img src="<?= base_url('');?>assets/img/logo_homepage.png" style="max-height: 35px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <i class="bi bi-list"></i>
         </button>
@@ -60,7 +60,7 @@
                 <span class="small">Login</span>
               </span>
             </a>
-<?php } ?>
+<?php }   ?>
           </div>
         </div>
       </div>
