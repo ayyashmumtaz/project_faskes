@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <!-- Google Fonts -->
@@ -17,6 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Frontend CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title><?= $title ?></title>
 </head>
 <body>
@@ -24,7 +27,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white" id="mainNav">
       <div class="container px-5">
-        <a class="navbar-brand fw-bold" href="<?= base_url() ?>homepage">SIFASKES DEPOK</a>
+        <a class="navbar-brand fw-bold" href="<?= base_url() ?>homepage"><img src="<?= base_url('');?>assets/img/logo_homepage.png" style="max-height: 60px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <i class="bi bi-list"></i>
         </button>
@@ -45,11 +48,19 @@
                 <span class="small">Daftar</span>
               </span>
             </a> -->
-            <a href="<?= base_url() ?>Login/logout" class="btn btn-danger rounded px-3 mb-2 ms-2 mb-lg-0">
+<?php if ($this->session->userdata('logged_in') == TRUE) { ?>
+            <a href="<?= base_url() ?>login/logout" class="btn btn-outline-danger rounded px-3 mb-2 mb-lg-0">
               <span class="d-flex align-items-center">
-                <span class="small">Sign Out</span>
+                <span class="small">Logout</span>
               </span>
             </a>
+<?php } else { ?>
+              <a href="<?= base_url() ?>Login/logout" class="btn btn-primary rounded px-3 mb-2 ms-2 mb-lg-0">
+              <span class="d-flex align-items-center">
+                <span class="small">Login</span>
+              </span>
+            </a>
+<?php } ?>
           </div>
         </div>
       </div>

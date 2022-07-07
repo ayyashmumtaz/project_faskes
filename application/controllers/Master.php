@@ -63,22 +63,54 @@ class Master extends CI_Controller
 		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
 		$jenis_faskes = $this->input->post('jenis_faskes_id');
 
-		$data = array(
-			// 'id'					=> $id,
-			'nama'				=> $nama_faskes,
-			'alamat'				=> $alamat,
-			'kecamatan_id'		=> $kecamatan,
-			'latlong'			=> $latlong,
-			'deskripsi'			=> $deskripsi,
-			'skor_rating'		=> $rating,
-			'foto1'				=> $foto1,
-			'foto2'				=> $foto2,
-			'foto3'				=> $foto3,
-			'website'			=> $website,
-			'jumlah_dokter'	=> $jumlah_dokter,
-			'jumlah_pegawai'	=> $jumlah_pegagwai,
-			'jenis_id'			=> $jenis_faskes
-		);
+		$config['upload_path']		= FCPATH . './uploads/';
+		$config['upload_path']		= '*';
+		$config['file_name']			= $foto1;
+		$config['file_name']			= $foto2;
+		$config['file_name']			= $foto3;
+		$config['max_size']        = 10024;
+		$config['max_width']       = 6000;
+		$config['max_height']      = 6000;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('foto')) {
+			$data['error'] = $this->upload->display_errors();
+			echo $data['error'];
+		} else {
+			$fix_upload = $this->upload->data();
+			$where = [
+				'foto1' 	=> $foto1,
+				'foto2' 	=> $foto2,
+				'foto3'	=> $foto3,
+			];
+
+			$new_data = array(
+				'foto1' => $fix_upload['file_name'],
+				'foto2' => $fix_upload['file_name'],
+				'foto3' => $fix_upload['file_name'],
+			);
+
+			$data_foto1 = $new_data['foto1'];
+			$data_foto2 = $new_data['foto2'];
+			$data_foto3 = $new_data['foto3'];
+
+			$data = array(
+				'nama'				=> $nama_faskes,
+				'alamat'				=> $alamat,
+				'kecamatan_id'		=> $kecamatan,
+				'latlong'			=> $latlong,
+				'deskripsi'			=> $deskripsi,
+				'skor_rating'		=> $rating,
+				'foto1'				=> $data_foto1,
+				'foto2'				=> $data_foto2,
+				'foto3'				=> $data_foto3,
+				'website'			=> $website,
+				'jumlah_dokter'	=> $jumlah_dokter,
+				'jumlah_pegawai'	=> $jumlah_pegagwai,
+				'jenis_id'			=> $jenis_faskes
+			);
+		}
 
 		$this->Faskes_model->input_data($data, 'faskes');
 		$this->session->set_flashdata('input-data', ' ');
@@ -135,21 +167,52 @@ class Master extends CI_Controller
 		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
 		$jenis_faskes = $this->input->post('jenis_faskes_id');
 
-		$data = array(
-			'nama'				=> $nama_faskes,
-			'alamat'				=> $alamat,
-			'kecamatan_id'		=> $kecamatan,
-			'latlong'			=> $latlong,
-			'deskripsi'			=> $deskripsi,
-			'skor_rating'		=> $rating,
-			'foto1'				=> $foto1,
-			'foto2'				=> $foto2,
-			'foto3'				=> $foto3,
-			'website'			=> $website,
-			'jumlah_dokter'	=> $jumlah_dokter,
-			'jumlah_pegawai'	=> $jumlah_pegagwai,
-			'jenis_id'			=> $jenis_faskes
-		);
+		$config['upload_path']		= './uploads/';
+		$config['upload_path']		= '*';
+		$config['file_name']			= $foto1;
+		$config['file_name']			= $foto2;
+		$config['file_name']			= $foto3;
+		$config['max_size']        = 10024;
+		$config['max_width']       = 6000;
+		$config['max_height']      = 6000;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('foto_faskes')) {
+			$data['error'] = $this->upload->display_errors();
+			echo $data['error'];
+		} else {
+			$fix_upload = $this->upload->data();
+			$where = [
+				'foto1' 	=> $foto1,
+				'foto2' 	=> $foto2,
+				'foto3'	=> $foto3,
+			];
+			$new_data = array(
+				'foto1' => $fix_upload['file_name'],
+				'foto2' => $fix_upload['file_name'],
+				'foto3' => $fix_upload['file_name'],
+			);
+			$data_foto1 = $new_data['foto1'];
+			$data_foto2 = $new_data['foto2'];
+			$data_foto3 = $new_data['foto3'];
+
+			$data = array(
+				'nama'				=> $nama_faskes,
+				'alamat'				=> $alamat,
+				'kecamatan_id'		=> $kecamatan,
+				'latlong'			=> $latlong,
+				'deskripsi'			=> $deskripsi,
+				'skor_rating'		=> $rating,
+				'foto1'				=> $data_foto1,
+				'foto2'				=> $data_foto2,
+				'foto3'				=> $data_foto3,
+				'website'			=> $website,
+				'jumlah_dokter'	=> $jumlah_dokter,
+				'jumlah_pegawai'	=> $jumlah_pegagwai,
+				'jenis_id'			=> $jenis_faskes
+			);
+		}
 
 		$where = array('id' => $id);
 
@@ -193,7 +256,7 @@ class Master extends CI_Controller
 	public function kecamatan_save()
 	{
 		$nama = $this->input->post('nama_kecamatan');
-		$data = array (
+		$data = array(
 			'nama_kecamatan' => $nama
 		);
 
@@ -235,7 +298,7 @@ class Master extends CI_Controller
 	public function jenis_faskes_save()
 	{
 		$nama_faskes = $this->input->post('nama_faskes');
-		$data = array (
+		$data = array(
 			'nama_faskes' => $nama_faskes
 		);
 
@@ -285,6 +348,17 @@ class Master extends CI_Controller
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('master/komentar', $data);
+		$this->load->view('_partials/footer');
+	}
+
+	// CREATE
+	public function komentar_create()
+	{
+		$data['title'] = 'Form Komentar';
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/komentar_create');
 		$this->load->view('_partials/footer');
 	}
 }

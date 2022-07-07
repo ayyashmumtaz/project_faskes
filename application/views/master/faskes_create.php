@@ -28,7 +28,7 @@
           <div class="card-body">
              <div class="row">
                 <div class="col-12">
-                   <form method="POST" action="<?= base_url('Master/faskes_save') ?>" class="was-validated">
+                   <form method="POST" action="<?= base_url('Master/faskes_save') ?>" class="was-validated" enctype="multipart/form-data">
                       <div class="form-group">
                          <label for="nama" class="form-label">Nama Fasilitas</label>
                          <input id="nama" name="nama" placeholder="Tulis Nama Fasilitas Kesehatan" type="text" class="form-control" required>
@@ -64,9 +64,6 @@
                             <input name="foto1" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
-                         <div class="input-group-append">
-                            <button class="btn btn-success" type="button">Button</button>
-                         </div>
                       </div>
                       <label for="foto" class="form-label mt-3">Foto 2</label>
                       <div class="input-group is-invalid">
@@ -74,18 +71,12 @@
                             <input name="foto2" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
-                         <div class="input-group-append">
-                            <button class="btn btn-success" type="button">Button</button>
-                         </div>
                       </div>
                       <label for="foto" class="form-label mt-3">Foto 3</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
                             <input name="foto3" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
-                         </div>
-                         <div class="input-group-append">
-                            <button class="btn btn-success" type="button">Button</button>
                          </div>
                       </div>
                       <div class="form-group mt-3">
