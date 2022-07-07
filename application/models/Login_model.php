@@ -7,6 +7,11 @@ class Login_model extends CI_Model {
 		$query = $this->db->get_where('users', $data);
 	return $query;
 	}	
+
+	public function tambah_data($data, $table)
+	{
+	   $this->db->insert($table, $data);
+	}
 	
 
 }

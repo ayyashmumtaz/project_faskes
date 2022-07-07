@@ -65,6 +65,9 @@ Swal.fire({
                                 <hr>
                                 <div class="text-center">
                                     <a class="small" href="forgot-password.html">Lupa Password?</a>
+                                    <br>    
+
+                                    <a class="small" href="<?= base_url('Login/');?>register">Register</a>
                                 </div>
 
 

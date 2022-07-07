@@ -55,6 +55,31 @@ class Login extends CI_Controller {
 		redirect(base_url('Login'));
 	}
 
+	public function register(){
+		$this->load->view('_partials/header');
+		$this->load->view('register');
+	}
+
+	public function tambah_register()
+	{
+		$username = $this->input->post('username');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+
+		$data = array(
+			'username' => $username,
+			'email' => $email,
+			'password' => md5($password),
+			'status' => 1,
+			'role' => 'public'
+			
+			);
+
+		$this->Login_model->tambah_data($data, 'users');
+		$this->session->set_flashdata('sukses', ' ');
+		redirect(base_url('Login/register'));
+	}
+
 }
 
 /* End of file Login.php */

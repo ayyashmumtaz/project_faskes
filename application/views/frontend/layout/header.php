@@ -49,6 +49,7 @@
               </span>
             </a> -->
 <?php if ($this->session->userdata('logged_in') == TRUE) { ?>
+  <small style="padding-right:5px;">Welcome, <?= $this->session->userdata('username');?></small>
             <a href="<?= base_url() ?>login/logout" class="btn btn-outline-danger rounded px-3 mb-2 mb-lg-0">
               <span class="d-flex align-items-center">
                 <span class="small">Logout</span>
