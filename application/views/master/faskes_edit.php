@@ -74,14 +74,11 @@
                          <label for="skor_rating" class="form-label">Skor Rating</label>
                          <input id="skor_rating" name="skor_rating" value="<?= $fe->skor_rating ?>" type="text" class="form-control" onchange="this.value = (this.value > 10.0) ? 10.0 : ((this.value < 0) ? 0 : this.value);" required>
                       </div>
-                      <label for="foto" class="form-label">Foto 1</label>
+                      <!-- <label for="foto" class="form-label">Foto 1</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto1" type="file" class="custom-file-input" value="<?= $fe->foto1 ?>" required>
+                            <input name="foto" type="file" class="custom-file-input" value="<?= $fe->foto ?>" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
-                         </div>
-                         <div class="input-group-append">
-                            <button class="btn btn-success" type="button">Button</button>
                          </div>
                       </div>
                       <label for="foto" class="form-label mt-3">Foto 2</label>
@@ -103,7 +100,7 @@
                          <div class="input-group-append">
                             <button class="btn btn-success" type="button">Button</button>
                          </div>
-                      </div>
+                      </div> -->
                       <div class="form-group mt-3">
                          <label for="website" class="form-label">Website</label>
                          <input id="website" name="website" value="<?= $fe->website ?>" type="text" class="form-control" required>

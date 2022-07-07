@@ -105,22 +105,10 @@
                <div class="col-4">
                   <table class="table">
                      <tr>
-                        <td>Foto 1</td>
+                        <td>Foto</td>
                      </tr>
                      <tr>
-                        <td><?= $faskes->foto1 ?></td>
-                     </tr>
-                     <tr>
-                        <td>Foto 2</td>
-                     </tr>
-                     <tr>
-                        <td><?= $faskes->foto2 ?></td>
-                     </tr>
-                     <tr>
-                        <td>Foto 3</td>
-                     </tr>
-                     <tr>
-                        <td><?= $faskes->foto3 ?></td>
+                        <td><img src="<?= base_url('uploads/') . $faskes->foto ?>" alt="" width="100%"></td>
                      </tr>
                   </table>
                </div>

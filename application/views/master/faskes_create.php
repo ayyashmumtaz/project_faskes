@@ -58,14 +58,14 @@
                          <label for="skor_rating" class="form-label">Skor Rating</label>
                          <input id="skor_rating" name="skor_rating" placeholder="Masukkan Rating Faskes Anda dari 0.0 - 10.0" type="text" class="form-control" onchange="this.value = (this.value > 10.0) ? 10.0 : ((this.value < 0) ? 0 : this.value);" required>
                       </div>
-                      <label for="foto" class="form-label">Foto 1</label>
+                      <label for="foto" class="form-label">Foto</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto1" type="file" class="custom-file-input" required>
+                            <input name="foto" type="file" class="custom-file-input" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                       </div>
-                      <label for="foto" class="form-label mt-3">Foto 2</label>
+                      <!-- <label for="foto" class="form-label mt-3">Foto 2</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
                             <input name="foto2" type="file" class="custom-file-input" required>
@@ -78,7 +78,7 @@
                             <input name="foto3" type="file" class="custom-file-input" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
-                      </div>
+                      </div> -->
                       <div class="form-group mt-3">
                          <label for="website" class="form-label">Website</label>
                          <input id="website" name="website" placeholder="Tulis Website Fasilitas Kesehatan" type="text" class="form-control" required>

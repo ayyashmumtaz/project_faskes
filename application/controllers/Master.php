@@ -55,19 +55,17 @@ class Master extends CI_Controller
 		$latlong = $this->input->post('latlong');
 		$deskripsi = $this->input->post('deskripsi');
 		$rating = $this->input->post('skor_rating');
-		$foto1 = $this->input->post('foto1');
-		$foto2 = $this->input->post('foto2');
-		$foto3 = $this->input->post('foto3');
+		$foto = $this->input->post('foto');
+
 		$website = $this->input->post('website');
 		$jumlah_dokter = $this->input->post('jumlah_dokter');
 		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
 		$jenis_faskes = $this->input->post('jenis_faskes_id');
 
 		$config['upload_path']		= FCPATH . './uploads/';
-		$config['upload_path']		= '*';
-		$config['file_name']			= $foto1;
-		$config['file_name']			= $foto2;
-		$config['file_name']			= $foto3;
+		$config['allowed_types']	= '*';
+		$config['file_name']			= $nama_faskes;
+
 		$config['max_size']        = 10024;
 		$config['max_width']       = 6000;
 		$config['max_height']      = 6000;
@@ -79,21 +77,12 @@ class Master extends CI_Controller
 			echo $data['error'];
 		} else {
 			$fix_upload = $this->upload->data();
-			$where = [
-				'foto1' 	=> $foto1,
-				'foto2' 	=> $foto2,
-				'foto3'	=> $foto3,
-			];
 
 			$new_data = array(
-				'foto1' => $fix_upload['file_name'],
-				'foto2' => $fix_upload['file_name'],
-				'foto3' => $fix_upload['file_name'],
+				'foto' => $fix_upload['file_name'],
 			);
 
-			$data_foto1 = $new_data['foto1'];
-			$data_foto2 = $new_data['foto2'];
-			$data_foto3 = $new_data['foto3'];
+			$data_foto = $new_data['foto'];
 
 			$data = array(
 				'nama'				=> $nama_faskes,
@@ -102,9 +91,7 @@ class Master extends CI_Controller
 				'latlong'			=> $latlong,
 				'deskripsi'			=> $deskripsi,
 				'skor_rating'		=> $rating,
-				'foto1'				=> $data_foto1,
-				'foto2'				=> $data_foto2,
-				'foto3'				=> $data_foto3,
+				'foto'				=> $data_foto,
 				'website'			=> $website,
 				'jumlah_dokter'	=> $jumlah_dokter,
 				'jumlah_pegawai'	=> $jumlah_pegagwai,
@@ -159,19 +146,19 @@ class Master extends CI_Controller
 		$latlong = $this->input->post('latlong');
 		$deskripsi = $this->input->post('deskripsi');
 		$rating = $this->input->post('skor_rating');
-		$foto1 = $this->input->post('foto1');
-		$foto2 = $this->input->post('foto2');
-		$foto3 = $this->input->post('foto3');
+		$foto = $this->input->post('foto');
+		// $foto2 = $this->input->post('foto2');
+		// $foto3 = $this->input->post('foto3');
 		$website = $this->input->post('website');
 		$jumlah_dokter = $this->input->post('jumlah_dokter');
 		$jumlah_pegagwai = $this->input->post('jumlah_pegawai');
 		$jenis_faskes = $this->input->post('jenis_faskes_id');
 
 		$config['upload_path']		= './uploads/';
-		$config['upload_path']		= '*';
-		$config['file_name']			= $foto1;
-		$config['file_name']			= $foto2;
-		$config['file_name']			= $foto3;
+		$config['allowed_types']	= '*';
+		$config['file_name']			= $foto;
+		// $config['file_name']			= $foto2;
+		// $config['file_name']			= $foto3;
 		$config['max_size']        = 10024;
 		$config['max_width']       = 6000;
 		$config['max_height']      = 6000;
@@ -184,18 +171,18 @@ class Master extends CI_Controller
 		} else {
 			$fix_upload = $this->upload->data();
 			$where = [
-				'foto1' 	=> $foto1,
-				'foto2' 	=> $foto2,
-				'foto3'	=> $foto3,
+				'foto' 	=> $foto,
+				// 'foto2' 	=> $foto2,
+				// 'foto3'	=> $foto3,
 			];
 			$new_data = array(
-				'foto1' => $fix_upload['file_name'],
-				'foto2' => $fix_upload['file_name'],
-				'foto3' => $fix_upload['file_name'],
+				'foto' => $fix_upload['file_name'],
+				// 'foto2' => $fix_upload['file_name'],
+				// 'foto3' => $fix_upload['file_name'],
 			);
-			$data_foto1 = $new_data['foto1'];
-			$data_foto2 = $new_data['foto2'];
-			$data_foto3 = $new_data['foto3'];
+			$data_foto = $new_data['foto'];
+			// $data_foto2 = $new_data['foto2'];
+			// $data_foto3 = $new_data['foto3'];
 
 			$data = array(
 				'nama'				=> $nama_faskes,
@@ -204,9 +191,9 @@ class Master extends CI_Controller
 				'latlong'			=> $latlong,
 				'deskripsi'			=> $deskripsi,
 				'skor_rating'		=> $rating,
-				'foto1'				=> $data_foto1,
-				'foto2'				=> $data_foto2,
-				'foto3'				=> $data_foto3,
+				'foto'				=> $data_foto,
+				// 'foto2'				=> $data_foto2,
+				// 'foto3'				=> $data_foto3,
 				'website'			=> $website,
 				'jumlah_dokter'	=> $jumlah_dokter,
 				'jumlah_pegawai'	=> $jumlah_pegagwai,
