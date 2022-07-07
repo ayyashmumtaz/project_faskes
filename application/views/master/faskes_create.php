@@ -61,21 +61,21 @@
                       <label for="foto" class="form-label">Foto 1</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto1" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                            <input name="foto1" type="file" class="custom-file-input" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                       </div>
                       <label for="foto" class="form-label mt-3">Foto 2</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto2" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                            <input name="foto2" type="file" class="custom-file-input" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                       </div>
                       <label for="foto" class="form-label mt-3">Foto 3</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto3" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                            <input name="foto3" type="file" class="custom-file-input" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                       </div>

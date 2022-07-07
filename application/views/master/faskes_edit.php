@@ -59,10 +59,7 @@
                       <div class="form-group">
                          <label for="kecamatan_id" class="form-label">Kecamatan</label>
                          <select id="validatedInputGroupSelect" name="kecamatan_id" class="form-control" value="" required>
-                            <option value="">Silahkan Pilih Kecamatan</option>
-                            <?php foreach ($kecamatan as $i) { ?>
-                               <option value="<?php echo $i['id_kecamatan']; ?>"><?php echo $i['nama_kecamatan']; ?></option>
-                            <?php } ?>
+                               <option value="<?php echo $faskes->id_kecamatan; ?>"><?php echo $faskes->nama_kecamatan; ?></option>
                          </select>
                       </div>
                       <div class="form-group">
@@ -80,7 +77,7 @@
                       <label for="foto" class="form-label">Foto 1</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto1" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" value="<?= $fe->foto1 ?>" required>
+                            <input name="foto1" type="file" class="custom-file-input" value="<?= $fe->foto1 ?>" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                          <div class="input-group-append">
@@ -90,7 +87,7 @@
                       <label for="foto" class="form-label mt-3">Foto 2</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto2" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" value="<?= $fe->foto2 ?>" required>
+                            <input name="foto2" type="file" class="custom-file-input" value="<?= $fe->foto2 ?>" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                          <div class="input-group-append">
@@ -100,7 +97,7 @@
                       <label for="foto" class="form-label mt-3">Foto 3</label>
                       <div class="input-group is-invalid">
                          <div class="custom-file">
-                            <input name="foto3" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" value="<?= $fe->foto3 ?>" required>
+                            <input name="foto3" type="file" class="custom-file-input" value="<?= $fe->foto3 ?>" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                          </div>
                          <div class="input-group-append">
@@ -122,10 +119,8 @@
                       <div class="form-group">
                          <label for="jenis_id" class="form-label">Jenis Faskes</label>
                          <select id="validatedInputGroupSelect" name="jenis_faskes_id" class="form-control" required>
-                            <option value="">Silahkan Pilih Jenis Faskes Anda</option>
-                            <?php foreach ($jenis_faskes as $jf) { ?>
-                               <option value="<?= $jf['id_faskes'] ?>"><?= $jf['nama_faskes'] ?></option>
-                            <?php } ?>
+            
+                               <option value="<?= $faskes->id_faskes ?>"><?= $faskes->nama_faskes ?></option>
                          </select>
                       </div>
                       <div class="form-group row">

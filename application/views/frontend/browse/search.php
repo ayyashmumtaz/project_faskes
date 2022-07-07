@@ -6,7 +6,7 @@
           <img src="<?= base_url() ?>assets/img/building-hero2.png" class="card-img-top rounded-4" alt="...">
           <div class="card-body d-block">
             <p class="card-text"><small class="text-muted"><?= '<i class="fa fa-location-dot"></i> ' . $f->nama_kecamatan . '<i class="fa fa-notes-medical ms-3"></i> ' . $f->nama_faskes ?></small></p>
-            <h5 class="card-title mb-1"><?= $f->nama ?></h5>
+            <h5 class="card-title mb-1"><?= $f->nama_faskes?> <?= $f->nama ?></h5>
             <p class="card-text"><?= $f->alamat ?></p>
           </div>
         </a>
