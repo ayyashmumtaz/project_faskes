@@ -1,9 +1,3 @@
-<?php
-echo $faskes->id;
-echo $faskes->nama;
-echo $faskes->nama_faskes;
-?>
-
 <div class="container-lg">
   <div class="row mt-5">
     <div class="col-md-12">
