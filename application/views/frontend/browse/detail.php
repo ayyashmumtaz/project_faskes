@@ -21,20 +21,11 @@
     <div class="row justify-content-between">
       <div class="col-md-7">
         <div class="rounded-4">
-          <img src="<?= base_url() ?>assets/img/building-hero2.png" class="img-fluid rounded-4" alt="...">
-        </div>
-
-        <div class="row row-cols-2 my-3">
-          <div class="col-sm-3">
-            <div class="card-body bg-white rounded-3">
-              <img src="<?= base_url() ?>assets/img/building-hero2.png" class="img-fluid rounded-4" alt="...">
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card-body bg-white rounded-3">
-              <img src="<?= base_url() ?>assets/img/building-hero2.png" class="img-fluid rounded-4" alt="...">
-            </div>
-          </div>
+          <?php if ($faskes->foto == null) { ?>
+            <img src="<?= base_url('uploads/no-img.jpg') ?>" class="card-img-top rounded-4" alt="..." width="20">
+          <?php } else { ?>
+            <img src="<?= base_url('uploads/') . $faskes->foto ?>" class="card-img-top rounded-4" alt="..." width="20">
+          <?php } ?>
         </div>
       </div>
 
@@ -91,7 +82,7 @@
 
       <?php foreach ($komentar as $k) : ?>
         <?php $k ?>
-        
+
         <?php if ($k->nama_faskes == $faskes->nama) : ?>
           <div class="card bg-white rounded-4 shadow border-0 mb-4">
             <div class="card-header d-flex align-items-center">
@@ -101,15 +92,25 @@
                 <p class="fs-5 mb-0"> <?= $k->username ?></p>
 
                 <p class="mb-0" style="font-size: .8rem;">
-                <?php 
-                  switch($k->nama_rating) :
-                    case 'Sangat Bagus': $jmlBintang = 5; break;
-                    case 'Bagus': $jmlBintang = 4; break;
-                    case 'Biasa Aja': $jmlBintang = 3; break;
-                    case 'Kurang Bagus': $jmlBintang = 2; break;
-                    case 'Jelek': $jmlBintang = 1; break;
+                  <?php
+                  switch ($k->nama_rating):
+                    case 'Sangat Bagus':
+                      $jmlBintang = 5;
+                      break;
+                    case 'Bagus':
+                      $jmlBintang = 4;
+                      break;
+                    case 'Biasa Aja':
+                      $jmlBintang = 3;
+                      break;
+                    case 'Kurang Bagus':
+                      $jmlBintang = 2;
+                      break;
+                    case 'Jelek':
+                      $jmlBintang = 1;
+                      break;
                   endswitch;
-                ?>
+                  ?>
 
                   <?php for ($i = 0; $i < $jmlBintang; $i++) : ?>
                     <small><i class="fa fa-star text-warning"></i></small>
