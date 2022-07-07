@@ -48,11 +48,19 @@
                 <span class="small">Daftar</span>
               </span>
             </a> -->
-            <a href="<?= base_url() ?>Login/logout" class="btn btn-danger rounded px-3 mb-2 ms-2 mb-lg-0">
+<?php if ($this->session->userdata('logged_in') == TRUE) { ?>
+            <a href="<?= base_url() ?>login/logout" class="btn btn-outline-danger rounded px-3 mb-2 mb-lg-0">
               <span class="d-flex align-items-center">
-                <span class="small">Sign Out</span>
+                <span class="small">Logout</span>
               </span>
             </a>
+<?php } else { ?>
+              <a href="<?= base_url() ?>Login/logout" class="btn btn-primary rounded px-3 mb-2 ms-2 mb-lg-0">
+              <span class="d-flex align-items-center">
+                <span class="small">Login</span>
+              </span>
+            </a>
+<?php } ?>
           </div>
         </div>
       </div>
