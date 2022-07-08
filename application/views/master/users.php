@@ -30,7 +30,7 @@
              <div class="row">
                 <div class="form-group row ml-2">
                    <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="#" class="text-white">Tambah Users</a>
+                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/login/register') ?>" class="text-white">Tambah Users</a>
                    </button>
                 </div>
                 <div class="col-12 table-responsive">
@@ -55,9 +55,6 @@
                                <td class="align-middle">
                                   <a href="<?= base_url('Master/users_detail?id=') . $u->id ?>" class="pr-2 text-info">
                                      <i class="fa-solid fa-eye pr-1 text-info"></i>View
-                                  </a>
-                                  <a href="<?= base_url('Master/edit?id=') . $u->id ?>" class="pr-2 text-success">
-                                     <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                   </a>
                                   <a href="<?= base_url('Master/delete_user?id=') . $u->id ?>" class="pr-2 text-danger" >
                                      <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
