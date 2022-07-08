@@ -2,7 +2,7 @@
 Faskes Depok (Kelompok 1)
 ###################
 
-Aplikasi ini dibuat untuk memenuhi kebutuhan tugas project dari Bapak Sirojul Munir, M. Kom
+Aplikasi ini dibuat untuk memenuhi kebutuhan tugas project dari Bapak Sirojul Munir, S.Si, M.Kom
 
 *******************
 Release Information
@@ -14,13 +14,20 @@ Aplikasi pada repositori ini masih dalam proses pengembangan
 Fitur & Keajaiban
 **************************
 
--  Bisa Makan_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+-  Multiuser Login
+-  AJAX Search Faskes Terdekat
+-  Beautiful UI/UX
+-  Dashboard Admin
 
+**************************
+Anggota
+**************************
+
+- ADITYA MUFID MUSYAFFA (0110221030) 
+- AYYASH MUMTAZ HAFIDZ (0110221032)
+- FAUZAN ABDILLAH (0110221028)
+- HANIF FARRIS QUTHB (0110221003)
+- SULTHAN RAGHIB FILLAH (0110221007)
 
 ***************
 Acknowledgement
