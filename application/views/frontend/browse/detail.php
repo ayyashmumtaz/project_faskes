@@ -43,34 +43,42 @@
     </div>
   </div>
 
-  <div class="row mt-5 mx-auto">
-    <h6>Apa pendapat anda mengenai fasilitas kesehatan ini?</h6>
-    <div class="col-md-7">
+  <?php //if($session)
+  //echo '<pre>';
+  //print_r($_SESSION['logged_in'])
+  ?>
+  <?php if (isset($_SESSION['logged_in'])) : ?>
+    <div class="row mt-5 mx-auto">
+      <h6>Apa pendapat anda mengenai fasilitas kesehatan ini?</h6>
+      <div class="col-md-7">
 
-      <div class="stars">
-        <?= form_open('browse/komentar'); ?>
-        <input class="star star-5" id="star-5" type="radio" name="star" value="<?= $nilai_rating[4]['id_rating'] ?>" />
-        <label class="star star-5" for="star-5"></label>
-        <input class="star star-4" id="star-4" type="radio" name="star" value="<?= $nilai_rating[3]['id_rating'] ?>" />
-        <label class="star star-4" for="star-4"></label>
-        <input class="star star-3" id="star-3" type="radio" name="star" value="<?= $nilai_rating[2]['id_rating'] ?>" />
-        <label class="star star-3" for="star-3"></label>
-        <input class="star star-2" id="star-2" type="radio" name="star" value="<?= $nilai_rating[1]['id_rating'] ?>" />
-        <label class="star star-2" for="star-2"></label>
-        <input class="star star-1" id="star-1" type="radio" name="star" value="<?= $nilai_rating[0]['id_rating'] ?>" />
-        <label class="star star-1" for="star-1"></label>
-        <span class="card"></span>
+        <div class="stars">
+          <?= form_open('browse/komentar'); ?>
+          <input class="star star-5" id="star-5" type="radio" name="star" value="<?= $nilai_rating[4]['id_rating'] ?>" />
+          <label class="star star-5" for="star-5"></label>
+          <input class="star star-4" id="star-4" type="radio" name="star" value="<?= $nilai_rating[3]['id_rating'] ?>" />
+          <label class="star star-4" for="star-4"></label>
+          <input class="star star-3" id="star-3" type="radio" name="star" value="<?= $nilai_rating[2]['id_rating'] ?>" />
+          <label class="star star-3" for="star-3"></label>
+          <input class="star star-2" id="star-2" type="radio" name="star" value="<?= $nilai_rating[1]['id_rating'] ?>" />
+          <label class="star star-2" for="star-2"></label>
+          <input class="star star-1" id="star-1" type="radio" name="star" value="<?= $nilai_rating[0]['id_rating'] ?>" />
+          <label class="star star-1" for="star-1"></label>
+          <span class="card"></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card border-0">
+          <textarea class="card-body rounded-2 shadow border-0" name="isi" id="isi" cols="30" rows="3" placeholder="Tulis pendapat anda..."></textarea>
+          <!-- <input type="text" name="isi" id="isi" class="card-body rounded-2 shadow border-0" placeholder="Tulis pendapat anda..."> -->
+        </div>
+        <button class="btn btn-primary mt-3 w-100 mb-3">Kirim Komentar</button>
+        <?= form_close(); ?>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="card border-0">
-        <textarea class="card-body rounded-2 shadow border-0" name="isi" id="isi" cols="30" rows="3" placeholder="Tulis pendapat anda..."></textarea>
-        <!-- <input type="text" name="isi" id="isi" class="card-body rounded-2 shadow border-0" placeholder="Tulis pendapat anda..."> -->
-      </div>
-      <button class="btn btn-primary mt-3 w-100 mb-3">Kirim Komentar</button>
-      <?= form_close(); ?>
-    </div>
-  </div>
+    <?php else : ?>
+      <em><p style="margin-bottom: 15px; margin-top: 80px;">Anda perlu login untuk berkomentar</p></em>
+  <?php endif ?>
 
   <div class="row">
     <div class="col-md-7 px-3 mt-4 mb-2">
@@ -80,7 +88,7 @@
 
     <div class="col-md-6 mb-3">
 
-      
+
       <?php if ($komentar[0]->nama_faskes == $faskes->nama) : ?>
         <?php foreach ($komentar as $k) : ?>
           <?php $k ?>
@@ -134,10 +142,10 @@
 
             </div>
           </div>
-          <?php endforeach ?>
-          <?php else : ?>
-            <p class="px-3">Jadilah yang pertama berkomentar</p>
-          <?php endif ?>
+        <?php endforeach ?>
+      <?php else : ?>
+        <p class="px-3">Jadilah yang pertama berkomentar</p>
+      <?php endif ?>
     </div>
   </div>
 </div>
