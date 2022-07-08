@@ -24,7 +24,12 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'Faskes Kota Depok';
-		
+		$data['totalUser'] = $this->Faskes_model->jumlahUser();
+		$data['totalFaskes'] = $this->Faskes_model->jumlahFaskes();
+		$data['totalJenisFaskes'] = $this->Faskes_model->jumlahJenisFaskes();
+		$data['totalRating'] = $this->Faskes_model->jumlahKomentar();
+
+
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
 		$this->load->view('beranda');

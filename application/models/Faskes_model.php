@@ -92,4 +92,56 @@ class Faskes_model extends CI_Model
       $query = $this->db->get('faskes');
       return $query->result();
    }
+
+   public function jumlahUser()
+{   
+    $query = $this->db->get('users');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+ public function jumlahFaskes()
+{   
+    $query = $this->db->get('faskes');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+ public function jumlahJenisFaskes()
+{   
+    $query = $this->db->get('jenis_faskes');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+public function jumlahKomentar()
+{   
+    $query = $this->db->get('komentar');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
 }

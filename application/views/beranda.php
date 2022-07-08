@@ -53,7 +53,7 @@ Swal.fire({
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?= $totalFaskes;?></h3>
 
                 <p>Total Faskes</p>
               </div>
@@ -66,7 +66,7 @@ Swal.fire({
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+                <h3><?= $totalUser;?></h3>
 
                 <p>Total User</p>
               </div>
@@ -79,9 +79,9 @@ Swal.fire({
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3><?= $totalRating;?></h3>
 
-                <p>Rata-Rata Rating</p>
+                <p>Total Komentar</p>
               </div>
               <div class="icon">
               </div>
@@ -92,7 +92,7 @@ Swal.fire({
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $totalJenisFaskes;?></h3>
 
                 <p>Total Jenis Faskes</p>
               </div>
