@@ -89,6 +89,6 @@ class Browse extends CI_Controller
   public function komentar() {
     $data['title'] = 'SIFASKES';
     $data['comments'] = $this->Komentar_model->insertKomentar();
-    redirect('browse/detail/'.$this->session->userdata());
+    redirect('browse/detail/'.$this->session->userdata('faskes_id'));
   }
 }
