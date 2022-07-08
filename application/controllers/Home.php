@@ -12,6 +12,7 @@ class Home extends CI_Controller
     	if(!isset($status)){
       redirect(base_url("Login"));
     }
+    $this->load->model('Faskes_model');
 
 		// $status = $this->session->userdata('role');
 		//   	if(!isset($status)){

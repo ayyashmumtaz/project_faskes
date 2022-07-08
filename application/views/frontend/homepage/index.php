@@ -1,7 +1,7 @@
   <?php if ($this->session->flashdata('sukses')) { ?>
   <script type="text/javascript">let timerInterval
 Swal.fire({
-  title: 'Selamat Datang <?= $this->session->userdata('username'); ?>!',
+  title: 'Selamat Datang, <?= $this->session->userdata('username'); ?>!',
   html: 'Anda Berhasil Login!',
   timer: 1600,
   icon: 'success',
