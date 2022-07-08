@@ -325,6 +325,20 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// READ
+	public function users_detail()
+	{
+		$data['title'] = 'Users Detail';
+
+		$id = $this->input->get('id');
+		$data['users'] = $this->Users_model->findUsersById($id);
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('_partials/navbar');
+		$this->load->view('master/users_detail', $data);
+		$this->load->view('_partials/footer');
+	}
+
 	public function nilai_rating()
 	{
 		$data['title'] = 'Ketentuan Rating';

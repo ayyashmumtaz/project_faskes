@@ -53,7 +53,7 @@
                                <td class="align-middle"><?= $u->email ?></td>
                                <td class="align-middle"><?= $u->role ?></td>
                                <td class="align-middle">
-                                  <a href="<?= base_url('Master/detail?id=') . $u->id ?>" class="pr-2 text-info">
+                                  <a href="<?= base_url('Master/users_detail?id=') . $u->id ?>" class="pr-2 text-info">
                                      <i class="fa-solid fa-eye pr-1 text-info"></i>View
                                   </a>
                                   <a href="<?= base_url('Master/edit?id=') . $u->id ?>" class="pr-2 text-success">
