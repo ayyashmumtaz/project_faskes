@@ -341,6 +341,15 @@ class Master extends CI_Controller
 		$this->load->view('_partials/footer');
 	}
 
+	// DELETE
+	public function komentar_delete()
+	{
+		$id = $this->input->get('id_komentar');
+		$this->Komentar_model->deleteKomentar($id);
+		$this->session->set_flashdata('delete-data', ' ');
+		redirect(base_url() . 'master/komentar', 'refresh');
+	}
+
 	// CREATE
 	public function komentar_create()
 	{

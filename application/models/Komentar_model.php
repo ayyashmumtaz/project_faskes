@@ -22,7 +22,7 @@ class Komentar_model extends CI_Model
    public function getAllDataKomentarAdmin()
    {
 
-      $this->db->select('faskes.nama as nama_faskes, komentar.isi, komentar.tanggal, nilai_rating.nama_rating, users.*');
+      $this->db->select('id_komentar,faskes.nama as nama_faskes, komentar.isi, komentar.tanggal, nilai_rating.nama_rating, users.*');
       $this->db->from('komentar');
       $this->db->join('faskes', 'faskes.id = komentar.faskes_id', 'LEFT');
       $this->db->join('users', 'users.id = komentar.users_id', 'LEFT');
@@ -49,5 +49,12 @@ class Komentar_model extends CI_Model
    public function getRating()
    {
       return $this->db->get('nilai_rating')->result_array();
+   }
+
+   // DELETE
+   public function deleteKomentar($id)
+   {
+      $this->db->where('id_komentar', $id);
+      $this->db->delete('komentar');
    }
 }

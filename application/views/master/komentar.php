@@ -28,11 +28,7 @@
 
           <div class="card-body">
              <div class="row">
-                <div class="form-group row ml-2">
-                   <button name="submit" type="submit" class="btn btn-primary">
-                      <i class="fa-solid fa-plus mr-2"></i><a href="<?= base_url('Master/komentar_create') ?>" class="text-white">Tambah Komentar</a>
-                   </button>
-                </div>
+
                 <div class="col-12 table-responsive">
                    <table class="table table-hover table-bordered">
                       <thead class="thead-dark align-center">
@@ -49,18 +45,17 @@
                       <tbody>
                          <?php $nomor = 1; ?>
                          <?php foreach ($dataKomentar as $k) : ?>
-                            <tr>
-                               <td class="align-middle"><?= $nomor++ ?></td>
+                            <tr></tr>
+                            
+                               <td class="align-middle"><?= $k->id_komentar ?></td>
                                <td class="align-middle"><?= $k->tanggal ?></td>
                                <td class="align-middle"><?= $k->username ?></td>
                                <td class="align-middle"><?= $k->nama_faskes ?></td>
                                <td class="align-middle"><?= $k->isi ?></td>
                                <td class="align-middle"><?= $k->nama_rating ?></td>
                                <td class="align-middle">
-                                  <a href="<?= base_url('Master/edit?id=') . $k->id ?>" class="pr-2 text-success">
-                                     <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
-                                  </a>
-                                  <a href="<?= base_url('Master/delete?id=') . $k->id ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Komentar yang diberikan oleh User bernama, <?= $k->username ?> ini ?')) {return false}">
+
+                                  <a href="<?= base_url('Master/komentar_delete?id_komentar=') . $k->id_komentar ?>" class="pr-2 text-danger" >
                                      <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                   </a>
                                </td>
@@ -78,3 +73,14 @@
     <!-- /.content -->
  </div>
  <!-- /.content-wrapper -->
+
+ <?php if ($this->session->flashdata('delete-data')) : ?>
+    <script>
+       Swal.fire({
+          icon: 'success',
+          title: 'Data Berhasil di Hapus !',
+          showConfirmButton: false,
+          timer: 1500
+       })
+    </script>
+ <?php endif ?>
