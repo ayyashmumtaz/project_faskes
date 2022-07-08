@@ -79,7 +79,7 @@ class Browse extends CI_Controller
     $data['title'] = 'SIFASKES';
     $this->session->set_userdata('faskes_id', $id);
     $data['faskes'] = $this->Faskes_model->findFaskesById($id);
-    $data['komentar'] = $this->Komentar_model->getAllDataKomentar();
+    $data['komentar'] = $this->Komentar_model->getAllDataKomentar($id);
     $data['nilai_rating'] = $this->Komentar_model->getRating();
     $this->load->view('frontend/layout/header', $data);
     $this->load->view('frontend/browse/detail', $data);

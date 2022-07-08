@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 			$this->session->set_flashdata('sukses', ' ');
 			redirect(base_url("Home"));
 		}elseif ($status == 'public') {
-			$this->session->set_flashdata('login_berhasil', ' ');
+			$this->session->set_flashdata('sukses', ' ');
 			redirect(base_url("Homepage"));
 		}
 	} else {
