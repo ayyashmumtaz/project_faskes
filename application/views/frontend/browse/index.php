@@ -17,7 +17,7 @@
       <div class="col">
         <a href="<?= base_url() ?>browse/detail" class="card h-100 border-0 rounded-4 shadow">
         <?php if ($f->foto == null) { ?>
-            <img src="<?= base_url('uploads/no-img.jpg') ?>" class="card-img-top rounded-4" alt="..." width="20">
+            <img src="<?= base_url('uploads/no-img.png') ?>" class="card-img-top rounded-4" alt="..." width="20">
           <?php } else { ?>
             <img src="<?= base_url('uploads/') . $f->foto ?>" class="card-img-top rounded-4" alt="..." width="20">
           <?php } ?>

@@ -22,7 +22,7 @@
       <div class="col-md-7">
         <div class="rounded-4">
           <?php if ($faskes->foto == null) { ?>
-            <img src="<?= base_url('uploads/no-img.jpg') ?>" class="card-img-top rounded-4" alt="..." width="20">
+            <img src="<?= base_url('uploads/no-img.png') ?>" class="card-img-top rounded-4" alt="..." width="20">
           <?php } else { ?>
             <img src="<?= base_url('uploads/') . $faskes->foto ?>" class="card-img-top rounded-4" alt="..." width="20">
           <?php } ?>
