@@ -351,6 +351,34 @@ class Master extends CI_Controller
 		$this->load->view('master/komentar_create');
 		$this->load->view('_partials/footer');
 	}
+
+	public function upload()
+	{
+		$config['upload_path']      = './uploads/';
+		$config['allowed_types']    = '*';
+		$config['max_size']         = 10024;
+		$config['max_width']        = 6000;
+		$config['max_height']       = 6000;
+
+		$nama = $this->input->post('nama');
+		$array = explode('.', $_FILES['fotofaskes']['name']);
+		$extension = end($array);
+		$new_name = $nama . '.' . $extension;
+		$config['file_name'] = $new_name;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('fotofaskes')) {
+			$error = array('error' => $this->upload->display_errors());
+			echo $error;
+		} else {
+			$array_data[] = $new_name; // ? ke 1
+			$array_data[] = $nama; // ? ke 2
+			
+			$this->Faskes_model->upload_foto($array_data);
+		}
+		redirect(base_url() . 'Master/faskes_detail?id=' . $nama);
+	}
 }
 
 /* End of file Master.php */

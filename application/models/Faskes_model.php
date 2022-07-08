@@ -62,6 +62,12 @@ class Faskes_model extends CI_Model
       $this->db->delete('faskes');
    }
 
+   public function upload_foto($array)
+   {
+      $sql = "UPDATE faskes SET foto=? WHERE id=?";
+      $this->db->query($sql, $array);
+   }
+
 
    // Select keacamatan, kategori from faskes
    public function specificSearch($kecamatan, $kategori) {

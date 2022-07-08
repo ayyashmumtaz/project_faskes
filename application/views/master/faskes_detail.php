@@ -108,7 +108,24 @@
                         <td>Foto</td>
                      </tr>
                      <tr>
-                        <td><img src="<?= base_url('uploads/') . $faskes->foto ?>" alt="" width="100%"></td>
+                        <td>
+                           <?php echo form_open_multipart('Master/upload') ?>
+
+                           <input type="hidden" name="nama" value="<?= $faskes->id ?>">
+                           
+                           <?php
+                           $img = base_url('/uploads/' . $faskes->foto);
+                           if ($faskes->foto == null) {
+                              echo '<img src="' . base_url("/uploads/no-img.jpg") . '" alt="foto" width="100%"/>';
+                              echo '<input type="file" name="fotofaskes" class="btn btn-info mt-2">';
+                              echo '<button class="btn btn-info mt-2" type="submit"><i class="fa-solid fa-image mr-2"></i>Upload Foto</button>';
+                           } else { ?>
+                              <img src="<?= base_url('uploads/') . $faskes->foto ?>" alt="" width="100%">
+                           <?php } ?>
+                           <?php echo form_close() ?>
+                           
+                           
+                        </td>
                      </tr>
                   </table>
                </div>
