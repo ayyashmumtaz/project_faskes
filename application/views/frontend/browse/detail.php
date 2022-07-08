@@ -89,7 +89,7 @@
     <div class="col-md-6 mb-3">
 
 
-      <?php if ($komentar[0]->nama_faskes == $faskes->nama) : ?>
+      <?php if (isset($komentar[0]->nama_faskes) == $faskes->nama) : ?>
         <?php foreach ($komentar as $k) : ?>
           <?php $k ?>
           <div class="card bg-white rounded-4 shadow border-0 mb-4">
