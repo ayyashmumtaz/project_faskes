@@ -59,7 +59,7 @@
                                   <a href="<?= base_url('Master/edit?id=') . $u->id ?>" class="pr-2 text-success">
                                      <i class="fa-solid fa-file-pen pr-1 text-success"></i>Edit
                                   </a>
-                                  <a href="<?= base_url('Master/delete?id=') . $u->id ?>" class="pr-2 text-danger" onclick="if(!confirm('Anda Yakin Menghapus Data Users, <?= $u->id ?> ini ?')) {return false}">
+                                  <a href="<?= base_url('Master/delete_user?id=') . $u->id ?>" class="pr-2 text-danger" >
                                      <i class="fa-solid fa-trash pr-1 text-danger"></i>Delete
                                   </a>
                                </td>
@@ -78,4 +78,13 @@
  </div>
  <!-- /.content-wrapper -->
 
- 
+  <?php if ($this->session->flashdata('delete-data')) : ?>
+    <script>
+       Swal.fire({
+          icon: 'success',
+          title: 'Data Berhasil di Hapus !',
+          showConfirmButton: false,
+          timer: 1500
+       })
+    </script>
+ <?php endif ?>

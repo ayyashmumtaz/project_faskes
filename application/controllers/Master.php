@@ -261,6 +261,14 @@ class Master extends CI_Controller
 		redirect(base_url() . 'master/kecamatan', 'refresh');
 	}
 
+	public function delete_user()
+	{
+		$id = $this->input->get('id');
+		$this->Users_model->deleteUser($id);
+		$this->session->set_flashdata('delete-data', ' ');
+		redirect(base_url() . 'Master/users', 'refresh');
+	}
+
 	public function jenis_faskes()
 	{
 		$data['title'] = 'Data Jenis Faskes';
