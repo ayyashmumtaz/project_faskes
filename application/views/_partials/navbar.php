@@ -39,7 +39,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?= base_url();?>" class="brand-link">
+    <a href="<?= base_url('Home');?>" class="brand-link">
       <center>
          <span class="brand-text font-weight-light">FASKES DEPOK</span>
       </center>
