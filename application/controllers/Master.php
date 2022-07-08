@@ -333,7 +333,7 @@ class Master extends CI_Controller
 	{
 		$data['title'] = 'Data Komentar';
 
-		$data['dataKomentar'] = $this->Komentar_model->getAllDataKomentar();
+		$data['dataKomentar'] = $this->Komentar_model->getAllDataKomentarAdmin();
 
 		$this->load->view('_partials/header', $data);
 		$this->load->view('_partials/navbar');
